@@ -26,14 +26,15 @@ export class AllListingsDetailsComponent {
   };
 
 
-  ngOnChanges(changes: SimpleChanges) {
-    const listingId = changes['currentListing'].currentValue.id;
-    if (listingId != undefined) {
-      this.getCommentsByListingId(listingId);
-      this.updateListingViews(changes['currentListing'].currentValue);
-    } 
+  // ngOnChanges(changes: SimpleChanges) {
+  //   const listingId = this.route.snapshot.params["id"];
+  //   if (listingId != undefined) {
+  //     this.getListing(listingId);
+  //     this.getCommentsByListingId(listingId);
+  //     this.updateListingViews(this.currentListing);
+  //   } 
   
-  }
+  // }
 
 
   message = '';
@@ -47,11 +48,13 @@ export class AllListingsDetailsComponent {
   comments?: Comment[];
   
   ngOnInit(): void {
-    if (!this.viewMode) {
-      this.message = '';
-      this.getListing(this.route.snapshot.params["id"]);
-    }
-    
+    const listingId = this.route.snapshot.params["id"];
+    if (listingId != undefined) {
+      this.getListing(listingId);
+      this.getCommentsByListingId(listingId);
+      //this.updateListingViews(this.currentListing);
+    } 
+    console.log("listingid" + listingId);
   }
 
 
@@ -61,6 +64,7 @@ export class AllListingsDetailsComponent {
         next: (data) => {
           this.currentListing = data;
           console.log(data);
+          this.updateListingViews(data);
         },
         error: (e) => console.error(e)
       });

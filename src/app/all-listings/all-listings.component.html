@@ -25,7 +25,7 @@
           <div class="card-body">
             <h5 class="card-title">{{ listing.address }}</h5>
             <p class="card-text">{{ listing.address }}</p>
-            <a href="#!" class="btn btn-primary">More Details</a>
+            <a [routerLink]="['/details',listing.id]" class="btn btn-primary">More Details</a>
           </div>
         </div>
     </div>

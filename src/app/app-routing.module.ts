@@ -11,6 +11,7 @@ import {  ListingDetailsComponent } from './myListing components/listing-details
 import { AddListingComponent } from './myListing components/add-listing/add-listing.component';
 import { AllListingsComponent } from './all-listings/all-listings.component';
 import { CommentsComponent } from './comments/comments.component';
+import { AllListingsDetailsComponent } from './all-listings-details/all-listings-details.component';
 
 const routes: Routes = [
   { path: 'home', component: HomeComponent },
@@ -19,6 +20,7 @@ const routes: Routes = [
   { path: 'profile', component: ProfileComponent },
   { path: 'listings', component: ListingsListComponent },
   { path: 'listings/:id', component:  ListingDetailsComponent },
+  { path: 'details/:id', component:  AllListingsDetailsComponent },
   { path: 'add', component: AddListingComponent },
   { path: 'allListings', component: AllListingsComponent },
   { path: 'comments', component: CommentsComponent },
