@@ -1,0 +1,99 @@
+<div *ngIf="viewMode; else editable">
+  <div *ngIf="currentListing.id">
+    <h4>Listings</h4>
+    <div>
+      <label><strong>Address:</strong></label> {{ currentListing.address }}
+    </div>
+    <div>
+      <label><strong>University:</strong></label>
+      {{ currentListing.university }}
+    </div>
+    <div>
+      <label><strong>Semester:</strong></label>
+      {{ currentListing.semester }}
+    </div>
+    <div>
+      <label><strong>Rent:</strong></label>
+      {{ currentListing.rent }}
+    </div>
+
+    <a
+      class="badge badge-warning"
+      routerLink="/listings/{{ currentListing.id }}"
+    >
+      Edit
+    </a>
+  </div>
+
+  <div *ngIf="!currentListing">
+    <br />
+    <p>Please click on a Listing...</p>
+  </div>
+</div>
+
+<ng-template #editable>
+  <div *ngIf="currentListing.id" class="edit-form">
+    <h4>Listing Changes</h4>
+    <form>
+      <div class="form-group">
+        <label for="address">Address</label>
+        <input
+          type="text"
+          class="form-control"
+          id="address"
+          [(ngModel)]="currentListing.address"
+          name="address"
+        />
+      </div>
+      <div class="form-group">
+        <label for="university">University</label>
+        <input
+          type="text"
+          class="form-control"
+          id="university"
+          [(ngModel)]="currentListing.university"
+          name="university"
+        />
+      </div>
+      <div class="form-group">
+        <label for="semester">Semester</label>
+        <input
+          type="text"
+          class="form-control"
+          id="semester"
+          [(ngModel)]="currentListing.semester"
+          name="semester"
+        />
+      </div>
+      <div class="form-group">
+        <label for="rent">Rent</label>
+        <input
+          type="text"
+          class="form-control"
+          id="rent"
+          [(ngModel)]="currentListing.rent"
+          name="rent"
+        />
+      </div>
+
+    </form>
+
+    <button class="badge badge-danger mr-2" (click)="deleteListing()">
+      Delete
+    </button>
+
+    <button
+      type="submit"
+      class="badge badge-success mb-2"
+      (click)="updateListing()"
+    >
+      Update
+    </button>
+    <p>{{ message }}</p>
+  </div>
+
+  <div *ngIf="!currentListing.id">
+    <br />
+    <p>Cannot access this Listing...</p>
+  </div>
+</ng-template>

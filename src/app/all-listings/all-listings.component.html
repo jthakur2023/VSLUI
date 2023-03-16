@@ -1,0 +1,53 @@
+<div class="list row">
+  <div class="col-md-8">
+    <div class="input-group mb-3">
+      <input
+        type="text"
+        class="form-control"
+        placeholder="Search by university"
+        [(ngModel)]="university"
+      />
+      <div class="input-group-append">
+        <button
+          class="btn btn-outline-secondary"
+          (click)="searchUniversity()"
+        >
+          Search
+        </button>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div *ngFor="let listing of listings; let i = index" class="col-md-4 col-lg-4">
+
+        <div class="card">
+          <img src="http://localhost:8080/images/{{listing.image}}" class="card-img-top" alt="Fissure in Sandstone"/>
+          <div class="card-body">
+            <h5 class="card-title">{{ listing.address }}</h5>
+            <p class="card-text">{{ listing.address }}</p>
+            <a href="#!" class="btn btn-primary">More Details</a>
+          </div>
+        </div>
+    </div>
+  </div>      
+  <!-- <div class="col-md-6">
+    <h4>View all Listings</h4>
+    <ul class="list-group">
+      <li
+        class="list-group-item"
+        *ngFor="let listing of listings; let i = index"
+        [class.active]="i == currentIndex"
+        (click)="setActiveListing(listing, i)"
+      >
+        {{ listing.address }}
+      </li>
+    </ul>
+
+  </div> -->
+  <div class="modal-dialog modal-fullscreen">
+    <app-all-listings-details
+      [viewMode]="true"
+      [currentListing]="currentListing"
+    ></app-all-listings-details>
+  </div>
+</div>  
