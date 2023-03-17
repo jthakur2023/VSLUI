@@ -1,17 +1,17 @@
 import { Component, Input, OnInit, SimpleChanges } from '@angular/core';
-import { ListingService } from 'src/app/services/listing.service';
-import { CommentService } from 'src/app/services/comment.service';
 import { ActivatedRoute, Router } from '@angular/router';
-import { Listing } from 'src/app/models/Listing.model';
+import { ListingService } from '../_services/listing.service';
+import { CommentService } from '../_services/comment.service';
+import { Listing } from '../models/Listing.model';
 import { Comment } from '../models/comment.model';
 
 
 @Component({
-  selector: 'app-all-listings-details',
-  templateUrl: './all-listings-details.component.html',
-  styleUrls: ['./all-listings-details.component.css']
+  selector: 'app-listing-detail',
+  templateUrl: './listing-detail.component.html',
+  styleUrls: ['./listing-detail.component.css']
 })
-export class AllListingsDetailsComponent {
+export class ListingDetailComponent {
 
   @Input() viewMode = false;
 
@@ -121,6 +121,8 @@ export class AllListingsDetailsComponent {
         error: (e) => console.error(e)
       });
   }
+
+
 
 
 }

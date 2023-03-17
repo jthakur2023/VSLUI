@@ -1,0 +1,30 @@
+<section id="picture">
+    <div class="card">
+      <img src="http://localhost:8080/images/{{currentListing.image}}" class="img-fluid"/>
+    </div>
+    <br/>
+    <br/>
+  </section>
+  <section id="details">
+    <div class="container">
+      <div class="row">
+      <div class="col-lg-6 mb-6">
+        <div class="card">
+          <div class="card-body border-0">
+            <h5 class="card-title">{{currentListing.address}}</h5>
+            <p class="card-text">{{currentListing.university}}</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-6 mb-6">
+        <div class="card">
+          <div class="card-body border-0">
+            <h5 class="card-title">Rent: ${{currentListing.rent}}</h5>
+            <p class="card-text">Semester: {{currentListing.semester}}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  </section>
+  

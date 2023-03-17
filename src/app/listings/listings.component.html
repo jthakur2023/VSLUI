@@ -1,0 +1,19 @@
+<section id="gallery">
+    <div class="container">
+      <div class="row">
+      <div class="col-lg-4 mb-4" *ngFor="let listing of listings; let i = index">
+      <div class="card">
+        <img src="http://localhost:8080/images/{{listing.image}}" alt="" class="card-img-top" height="200">
+        <div class="card-body">
+          <h5 class="card-title">{{listing.address}}</h5>
+          <p class="card-text">{{listing.university}}</p>
+         <a [routerLink]="['/details',listing.id]" class="btn btn-sm">Read More</a>
+          <a class="btn btn-outline-danger btn-sm"><i class="far fa-heart"></i></a>
+          <span class="badge">Rent:{{listing.rent}}</span>
+        </div>
+       </div>
+      </div>
+    </div>
+  </div>
+  </section>
+  

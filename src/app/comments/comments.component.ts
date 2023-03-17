@@ -1,5 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { CommentService } from 'src/app/services/comment.service';
+import { CommentService } from '../_services/comment.service';
 import { ActivatedRoute, Router } from '@angular/router';
 
 import { Listing } from 'src/app/models/Listing.model';

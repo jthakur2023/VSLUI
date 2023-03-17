@@ -6,24 +6,21 @@ import { LoginComponent } from './login/login.component';
 import { HomeComponent } from './home/home.component';
 import { ProfileComponent } from './profile/profile.component';
 
-import { ListingsListComponent } from './myListing components/listings-list/listings-list.component';
-import {  ListingDetailsComponent } from './myListing components/listing-details/listing-details.component';
-import { AddListingComponent } from './myListing components/add-listing/add-listing.component';
-import { AllListingsComponent } from './all-listings/all-listings.component';
-import { CommentsComponent } from './comments/comments.component';
-import { AllListingsDetailsComponent } from './all-listings-details/all-listings-details.component';
+import { ListingsComponent } from './listings/listings.component';
+import { ListingDetailComponent } from './listing-detail/listing-detail.component';
+import { ListingCreateComponent } from './listing-create/listing-create.component';
 
 const routes: Routes = [
   { path: 'home', component: HomeComponent },
   { path: 'login', component: LoginComponent },
   { path: 'register', component: RegisterComponent },
   { path: 'profile', component: ProfileComponent },
-  { path: 'listings', component: ListingsListComponent },
-  { path: 'listings/:id', component:  ListingDetailsComponent },
-  { path: 'details/:id', component:  AllListingsDetailsComponent },
-  { path: 'add', component: AddListingComponent },
-  { path: 'allListings', component: AllListingsComponent },
-  { path: 'comments', component: CommentsComponent },
+
+  { path: 'listings', component: ListingsComponent },
+  { path: 'listings/user', component: ListingsComponent },
+  { path: 'details/:id', component: ListingDetailComponent },
+  { path: 'create', component: ListingCreateComponent },
+
   { path: '', redirectTo: 'home', pathMatch: 'full' }
 ];
 

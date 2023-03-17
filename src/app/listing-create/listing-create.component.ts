@@ -1,15 +1,14 @@
 import { Component } from '@angular/core';
-import { Listing } from 'src/app/models/Listing.model';
-import { ListingService } from 'src/app/services/listing.service';
-import { StorageService } from '../../_services/storage.service';
-
+import { Listing } from '../models/Listing.model';
+import { ListingService } from '../_services/listing.service';
+import { StorageService } from '../_services/storage.service';
 
 @Component({
-  selector: 'app-add-listing',
-  templateUrl: './add-listing.component.html',
-  styleUrls: ['./add-listing.component.css']
+  selector: 'app-listing-create',
+  templateUrl: './listing-create.component.html',
+  styleUrls: ['./listing-create.component.css']
 })
-export class AddListingComponent {
+export class ListingCreateComponent {
 
   currentUser: any;
 
@@ -78,5 +77,6 @@ export class AddListingComponent {
         error: (e) => console.error(e)
       });
   }
+
 
 }
