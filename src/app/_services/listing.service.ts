@@ -4,6 +4,7 @@ import { Observable } from 'rxjs';
 import { Listing } from '../models/Listing.model';
 
 const baseUrl = 'http://localhost:8080/api/listings';
+const favoritesUrl = 'http://localhost:8080/api/favorites';
 
 @Injectable({
   providedIn: 'root'
@@ -51,4 +52,18 @@ export class ListingService {
   fileUpload(data:FormData): Observable<any> {
     return this.http.post(`${baseUrl}/upload`, data);
   }
+
+  createFavorite(data: any): Observable<any> {
+    return this.http.post(favoritesUrl, data);
+  }
+
+  listingFavorites(userid:any):Observable<Listing[]> {
+    return this.http.get<Listing[]>(`${favoritesUrl}/${userid}`);
+  }
+
+
+  deleteFavorite(data: any): Observable<any> {
+    return this.http.post(`${favoritesUrl}/delete`, data);
+  }
+
 }

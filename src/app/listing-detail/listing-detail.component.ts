@@ -1,6 +1,7 @@
 import { Component, Input, OnInit, SimpleChanges } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { ListingService } from '../_services/listing.service';
+import { StorageService } from '../_services/storage.service';
 import { CommentService } from '../_services/comment.service';
 import { Listing } from '../models/Listing.model';
 import { Comment } from '../models/comment.model';
@@ -24,7 +25,8 @@ export class ListingDetailComponent {
     views: '',
     image: '',
   };
-
+  currentUser: any;
+  
 
   // ngOnChanges(changes: SimpleChanges) {
   //   const listingId = this.route.snapshot.params["id"];
@@ -42,6 +44,7 @@ export class ListingDetailComponent {
   constructor(
     private listingService: ListingService,
     private commentService: CommentService,
+    private storageService: StorageService,
     private route: ActivatedRoute,
     private router: Router) { }
   
@@ -49,12 +52,13 @@ export class ListingDetailComponent {
   
   ngOnInit(): void {
     const listingId = this.route.snapshot.params["id"];
+    this.currentUser = this.storageService.getUser();
     if (listingId != undefined) {
       this.getListing(listingId);
       this.getCommentsByListingId(listingId);
       //this.updateListingViews(this.currentListing);
     } 
-    console.log("listingid" + listingId);
+    
   }
 
 
@@ -122,6 +126,22 @@ export class ListingDetailComponent {
       });
   }
 
+  saveFavorite(): void {
+    const aData = {userid:'', listingid:''};
+    aData.userid = this.currentUser.id;
+    aData.listingid = this.currentListing.id;
+
+    this.listingService.createFavorite(aData)
+      .subscribe({
+        next: (data) => {
+          
+          console.log(data);
+        },
+        error: (e) => console.error(e)
+      });
+
+  
+  }
 
 
 

@@ -7,9 +7,13 @@
         <div class="card-body">
           <h5 class="card-title">{{listing.address}}</h5>
           <p class="card-text">{{listing.university}}</p>
-         <a [routerLink]="['/details',listing.id]" class="btn btn-sm">Read More</a>
-          <a class="btn btn-outline-danger btn-sm"><i class="far fa-heart"></i></a>
+          <a [routerLink]="['/details',listing.id]" class="btn btn-sm">Read More</a>
+          &nbsp;&nbsp;
+          <!-- <a class="btn btn-outline-danger btn-sm"><i class="far fa-heart"></i></a> -->
           <span class="badge">Rent:{{listing.rent}}</span>
+        </div>
+        <div>
+          <button (click)='saveFavorite(listing)'>Fav</button>
         </div>
        </div>
       </div>

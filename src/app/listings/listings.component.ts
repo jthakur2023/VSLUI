@@ -23,13 +23,16 @@ export class ListingsComponent {
   href: string = "";
 
   ngOnInit(): void {
-    //const mylisting = this.route.snapshot.params["user"];
+ 
     this.href = this.router.url;
-    if (this.href.indexOf('/user') == -1) {
-      this.retrieveAllListings();
-    } else {
-      this.currentUser = this.storageService.getUser();
+    this.currentUser = this.storageService.getUser();
+
+    if (this.href.indexOf('/user') != -1) {
       this.retrieveListingsByUser();
+    } else if (this.href.indexOf('/favorites') != -1) {
+      this.retrieveFavorites();
+    } else {
+      this.retrieveAllListings();
     }
   }
 
@@ -44,10 +47,16 @@ export class ListingsComponent {
       });
   }
 
-
-
-
-
+  retrieveFavorites(): void {
+    this.listingService.listingFavorites(this.currentUser.id)
+      .subscribe({
+        next: (data) => {
+          this.listings= data;
+          console.log(data);
+        },
+        error: (e) => console.error(e)
+      });
+  }
 
   refreshList(): void {
     this.retrieveAllListings();
@@ -86,6 +95,22 @@ export class ListingsComponent {
       });
   }
 
+  saveFavorite(listing: any): void {
+    const aData = {userid:'', listingid:''};
+    aData.userid = this.currentUser.id;
+    aData.listingid = listing.id;
+
+    this.listingService.createFavorite(aData)
+      .subscribe({
+        next: (data) => {
+          this.listings= data;
+          console.log(data);
+        },
+        error: (e) => console.error(e)
+      });
+
+  
+  }
 
 }
 

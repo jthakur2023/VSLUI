@@ -1,0 +1,17 @@
+<div class="submit-form">
+    <div *ngIf="!submitted">
+        <div class="form-group">
+            <textarea type="text"
+            class="form-control"
+            id="comment"
+            required
+            [(ngModel)]="comment.comment"
+            name="comment"
+            placeholder="Enter your comment"></textarea>
+            <button (click)="saveComment()" class="btn btn-success">Submit</button>
+        </div>
+        <div *ngIf="submitted">
+            <button class="btn btn-success" (click)="newComment()">Add</button>
+        </div>
+    </div>
+</div>

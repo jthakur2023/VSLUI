@@ -18,6 +18,7 @@ const routes: Routes = [
 
   { path: 'listings', component: ListingsComponent },
   { path: 'listings/user', component: ListingsComponent },
+  { path: 'listings/favorites', component: ListingsComponent },
   { path: 'details/:id', component: ListingDetailComponent },
   { path: 'create', component: ListingCreateComponent },
 

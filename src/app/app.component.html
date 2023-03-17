@@ -6,7 +6,10 @@
         <a href="/listings" class="nav-link" *ngIf="isLoggedIn" routerLink="listings">AllListings</a>
       </li>
       <li class="nav-item">
-        <a href="/listings/user" class="nav-link" *ngIf="isLoggedIn" routerLink="listings/user">MyListings</a>
+        <a href="/listings/user" class="nav-link" *ngIf="isLoggedIn" routerLink="listings/user">Dashboard</a>
+      </li>
+      <li class="nav-item">
+        <a href="/listings/favorites" class="nav-link" *ngIf="isLoggedIn" routerLink="listings/favorites">Favorites</a>
       </li>
       <li class="nav-item">
         <a href="/create" class="nav-link" *ngIf="isLoggedIn" routerLink="create">CreateListing</a>
