@@ -2,4 +2,19 @@
     max-width: 400px;
     margin: auto;
   }
+  .card{
+    background-color: #D3D3D3;
+}
+.card-title{
+    color: #49A078;
+}
+.card-text{
+    color: #CACAAA;
+}
+.badge{
+    background-color: #EBF5EE;
+}
+.btn{
+    background-color:#81726A;
+}
   
