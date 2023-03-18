@@ -1,3 +1,29 @@
+<br/><br/>
+<section>
+  <div class="card" *ngIf="isAll">
+    <div class="list row">
+      <div class="col-md-8">
+        <div class="input-group mb-3">
+          <input
+            type="text"
+            class="form-control"
+            placeholder="Search by university"
+            [(ngModel)]="university"
+          />
+          <div class="input-group-append">
+            <button
+              class="btn"
+              (click)="searchUniversity()"
+            >
+              Search
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>  
+  </div> 
+</section>
+
 <section id="gallery">
     <div class="container">
       <div class="row">
@@ -12,12 +38,14 @@
           <!-- <a class="btn btn-outline-danger btn-sm"><i class="far fa-heart"></i></a> -->
           <span class="badge">Rent:{{listing.rent}}</span>
         </div>
-        <div>
-          <button (click)='saveFavorite(listing)'>Fav</button>
-        </div>
+        <div *ngIf="isFavorite">
+          <br/><br/>
+          <button (click)='removeFavorite(listing)'>Remove</button>
+      </div>
+  
        </div>
       </div>
     </div>
   </div>
-  </section>
+</section>
   

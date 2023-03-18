@@ -134,7 +134,7 @@ export class ListingDetailComponent {
     this.listingService.createFavorite(aData)
       .subscribe({
         next: (data) => {
-          
+          window.location.replace('/listings/favorites');
           console.log(data);
         },
         error: (e) => console.error(e)

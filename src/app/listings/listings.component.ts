@@ -21,6 +21,8 @@ export class ListingsComponent {
   university = '';
   currentUser: any;
   href: string = "";
+  isFavorite = false;
+  isAll = false;
 
   ngOnInit(): void {
  
@@ -29,10 +31,18 @@ export class ListingsComponent {
 
     if (this.href.indexOf('/user') != -1) {
       this.retrieveListingsByUser();
+      this.isAll = false;
+      this.isFavorite = false;
+     
     } else if (this.href.indexOf('/favorites') != -1) {
       this.retrieveFavorites();
+      this.isAll = false;
+      this.isFavorite = true;
+   
     } else {
       this.retrieveAllListings();
+      
+      this.isAll = true;
     }
   }
 
@@ -105,6 +115,24 @@ export class ListingsComponent {
         next: (data) => {
           this.listings= data;
           console.log(data);
+        },
+        error: (e) => console.error(e)
+      });
+
+  
+  }
+
+  removeFavorite(listing: any): void {
+    const aData = {userid:'', listingid:''};
+    aData.userid = this.currentUser.id;
+    aData.listingid = listing.id;
+
+    this.listingService.deleteFavorite(aData)
+      .subscribe({
+        next: (data) => {
+          this.listings= data;
+          console.log(data);
+          window.location.reload();
         },
         error: (e) => console.error(e)
       });
