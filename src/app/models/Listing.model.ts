@@ -6,6 +6,12 @@ export class Listing {
   rent?: string;
   views?: any;
   image?: string;
+  city?: string;
+  state?: string;
+  zip?: string;
+  rooms?: string;
+  baths?: string;
+  gender?: string;
   createdAt?: any;
   updatedAt?: any;
 }

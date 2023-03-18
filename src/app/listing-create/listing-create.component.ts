@@ -45,6 +45,7 @@ export class ListingCreateComponent {
         next: (res) => {
           console.log(res);
           this.submitted = true;
+          window.location.replace('/listings');
         },
         error: (e) => console.error(e)
       });
