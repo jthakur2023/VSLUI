@@ -14,4 +14,5 @@ export class Listing {
   gender?: string;
   createdAt?: any;
   updatedAt?: any;
+  userid?: any;
 }

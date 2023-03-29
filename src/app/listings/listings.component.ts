@@ -50,8 +50,9 @@ export class ListingsComponent {
     this.listingService.listingByUser(this.currentUser.id)
       .subscribe({
         next: (data) => {
-          this.listings= data;
-          console.log(data);
+          this.listings = data;
+          if(this.listings[0].views > 0){
+          }
         },
         error: (e) => console.error(e)
       });

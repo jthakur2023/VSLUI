@@ -1,3 +1,4 @@
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
 <div id="app">
   <nav class="navbar navbar-expand navbar-dark bg-dark">
     <a href="#" class="navbar-brand">VSL</a>
@@ -9,10 +10,14 @@
         <a href="/listings/user" class="nav-link" *ngIf="isLoggedIn" routerLink="listings/user">Dashboard</a>
       </li>
       <li class="nav-item">
-        <a href="/listings/favorites" class="nav-link" *ngIf="isLoggedIn" routerLink="listings/favorites">Favorites</a>
+        <a href="/listings/favorites" class="nav-link" *ngIf="isLoggedIn" routerLink="listings/favorites"><span class="material-symbols-outlined">
+          favorite
+          </span></a>
       </li>
       <li class="nav-item">
-        <a href="/create" class="nav-link" *ngIf="isLoggedIn" routerLink="create">CreateListing</a>
+        <a href="/create" class="nav-link" *ngIf="isLoggedIn" routerLink="create"><span class="material-symbols-outlined">
+          add
+          </span></a>
       </li>
     </ul>
 
@@ -30,7 +35,9 @@
         <a href="/profile" class="nav-link" routerLink="profile">{{ username }}</a>
       </li>
       <li class="nav-item">
-        <a href class="nav-link" (click)="logout()">LogOut</a>
+        <a href class="nav-link" (click)="logout()"><span class="material-symbols-outlined">
+          logout
+          </span></a>
       </li>
     </ul>
   </nav>

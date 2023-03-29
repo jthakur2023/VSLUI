@@ -1,6 +1,10 @@
-<br/><br/>
+ <br/><br/>
+ <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@1&family=Josefin+Sans:ital,wght@1,300&family=Quicksand&display=swap" rel="stylesheet">
+ <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
 <section>
-  <div class="card" *ngIf="isAll">
+  <div class="cardS"*ngIf="isAll">
     <div class="list row">
       <div class="col-md-8">
         <div class="input-group mb-3">
@@ -15,7 +19,9 @@
               class="btn"
               (click)="searchUniversity()"
             >
-              Search
+            <span class="material-symbols-outlined">
+              search
+              </span>
             </button>
           </div>
         </div>
@@ -35,12 +41,13 @@
           <p class="card-text">{{listing.university}}</p>
           <a [routerLink]="['/details',listing.id]" class="btn btn-sm">Read More</a>
           &nbsp;&nbsp;
-          <!-- <a class="btn btn-outline-danger btn-sm"><i class="far fa-heart"></i></a> -->
           <span class="badge">Rent:{{listing.rent}}</span>
         </div>
         <div *ngIf="isFavorite">
           <br/><br/>
-          <button (click)='removeFavorite(listing)'>Remove</button>
+          <button class="btn btn-link" (click)='removeFavorite(listing)'><span class="material-symbols-outlined">
+            delete
+            </span></button>
       </div>
   
        </div>
@@ -49,3 +56,6 @@
   </div>
 </section>
   
+ 
+
+ 

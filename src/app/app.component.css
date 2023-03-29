@@ -1,0 +1,16 @@
+.navbar-brand{
+    font-family: 'DM Serif Display', serif;
+    font-size: 3em;
+}
+.nav-item a{
+    font-family: 'Josefin Sans', sans-serif;
+    color: #EBDD31;
+}
+
+.material-symbols-outlined {
+  font-variation-settings:
+  'FILL' 0,
+  'wght' 400,
+  'GRAD' 0,
+  'opsz' 40
+}

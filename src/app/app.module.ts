@@ -24,6 +24,9 @@ import { CommentsComponent } from './comments/comments.component';
 import { ListingsComponent } from './listings/listings.component';
 import { ListingCreateComponent } from './listing-create/listing-create.component';
 import { ListingDetailComponent } from './listing-detail/listing-detail.component';
+import { UpdateComponent } from './update/update.component';
+import { MarketplaceComponent } from './marketplace/marketplace.component';
+import { CreateMarketPlaceComponent } from './create-market-place/create-market-place.component';
 
 @NgModule({
   declarations: [
@@ -35,7 +38,10 @@ import { ListingDetailComponent } from './listing-detail/listing-detail.componen
     ListingsComponent,
     ListingCreateComponent,
     ListingDetailComponent,
-    CommentsComponent
+    CommentsComponent,
+    UpdateComponent,
+    MarketplaceComponent,
+    CreateMarketPlaceComponent
   ],
   imports: [
     BrowserModule,

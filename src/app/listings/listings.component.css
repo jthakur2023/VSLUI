@@ -1,18 +1,37 @@
-section{
-    background-color: #010400;
-}
-.card{
-    background-color: #30332E;
-}
+ 
 .card-title{
-    color: #49A078;
+    color: black;
+    font-family:'Josefin Sans', sans-serif;
 }
 .card-text{
-    color: #CACAAA;
+    color: #447604;
+    font-family: 'Quicksand', sans-serif;
 }
 .badge{
     background-color: #EBF5EE;
 }
 .btn{
-    background-color:#81726A;
+    border-color: black;
 }
+.card{
+    border-color: black;
+}
+.cardS{
+    border-color: #EBF5EE;
+    text-align: center;
+    margin: auto;
+    padding: 10px;
+    width: 50%;
+}
+
+
+.material-symbols-outlined {
+  font-variation-settings:
+  'FILL' 0,
+  'wght' 400,
+  'GRAD' 0,
+  'opsz' 40
+}
+
+
+ 
