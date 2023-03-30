@@ -19,6 +19,27 @@ h3{
 #commentTitle{
     padding-top: 3%;
 }
+#created{
+  position: absolute;
+  bottom: 8px;
+  right: 16px;
+  font-size: 18px;
+  font-size: small;
+}
+#comment{
+  border-color: #010400;
+  border-bottom: #010400;
+  border-style: solid;
+}
+#username{
+  position: absolute;
+  bottom: 8px;
+  right: 16px;
+  font-size: medium;
+}
+.card{
+  border-style: none;
+}
   
 
   .carousel-item>img {

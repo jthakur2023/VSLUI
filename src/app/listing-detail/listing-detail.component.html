@@ -83,15 +83,15 @@
           <button class="btn btn-success" (click)="this.addItem()">Add Item</button>
         </div>
       </div>
+    <h5 class="card-title" id="commentTitle">Comments</h5>
     <div class="container">
-      <h5 class="card-title" id="commentTitle">Comments</h5>
         <div class="col-lg-12 mb-12" *ngFor="let comment of comments; let i = index">
           <div class="card">
-            <div class="card-body">
+            <div class="card-body" id="comment">
               <p >{{comment.comment}}</p>
+              <p class="card-text" id="username">{{currentUser.username}}</p>
+            <p class="card-text" id="created">{{comment.createdAt.substring(0,10)}}</p>
             </div>
-            <span class="badge text-bg-success">{{currentUser.username}}</span>
-            <p class="card-text">{{comment.createdAt.substring(0,10)}}</p>
           </div>
         </div>
     </div>
