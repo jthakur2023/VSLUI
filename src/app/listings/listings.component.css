@@ -16,12 +16,15 @@
 .card{
     border-color: black;
 }
-.cardS{
+#cardS{
     border-color: #EBF5EE;
     text-align: center;
     margin: auto;
     padding: 10px;
     width: 50%;
+}
+#filterNavbar{
+    width: auto;
 }
 
 

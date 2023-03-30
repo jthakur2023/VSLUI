@@ -4,10 +4,9 @@
 <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@1&family=Josefin+Sans:ital,wght@1,300&family=Quicksand&display=swap" rel="stylesheet">
  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
 <section>
-  <div class="cardS"*ngIf="isAll">
-    <div class="list row">
-      <div class="col-md-8">
-        <div class="input-group mb-3">
+  <div *ngIf="isAll">
+    <div class="list row"> 
+        <div class="input-group mb-3" id="cardS">
           <input
             type="text"
             class="form-control"
@@ -25,8 +24,44 @@
             </button>
           </div>
         </div>
-      </div>
     </div>  
+    <nav class="navbar navbar-expand navbar-dark bg-dark" id="filterNavbar">
+      <ul class="navbar-nav mr-auto" >
+        <div class="btn-group">
+          <button class="btn btn-secondary" type="button">
+            Semester
+          </button>
+          <button type="button" class="btn btn-secondary dropdown-toggle dropdown-toggle-split" data-bs-toggle="dropdown" aria-expanded="false">
+            <span class="visually-hidden">Toggle Dropdown</span>
+          </button>
+          <ul class="dropdown-menu">
+            <li><button class="dropdown-item" type="button">Summer</button></li>
+            <li><button class="dropdown-item" type="button">Fall</button></li>
+            <li><button class="dropdown-item" type="button">Spring</button></li>
+          </ul>
+        </div>
+        <div class="dropdown">
+          <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Type
+          </button>
+          <ul class="dropdown-menu">
+            <li><button class="dropdown-item" type="button">Apartment</button></li>
+            <li><button class="dropdown-item" type="button">Condo</button></li>
+            <li><button class="dropdown-item" type="button">Townhouse</button></li>
+            <li><button class="dropdown-item" type="button">Single Family House</button></li>
+          </ul>
+        </div>
+        <div class="dropdown">
+          <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Furnished
+          </button>
+          <ul class="dropdown-menu">
+            <li><button class="dropdown-item" type="button">Yes</button></li>
+            <li><button class="dropdown-item" type="button">No</button></li>
+          </ul>
+        </div>
+      </ul>
+    </nav>
   </div> 
 </section>
 
