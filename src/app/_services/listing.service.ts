@@ -2,9 +2,11 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { Listing } from '../models/Listing.model';
+import { MarketPlace } from '../models/Marketplace.model';
 
 const baseUrl = 'http://localhost:8080/api/listings';
 const favoritesUrl = 'http://localhost:8080/api/favorites';
+const listingItemsUrl = 'http://localhost:8080/api/listing/items';
 
 @Injectable({
   providedIn: 'root'
@@ -65,5 +67,16 @@ export class ListingService {
   deleteFavorite(data: any): Observable<any> {
     return this.http.post(`${favoritesUrl}/delete`, data);
   }
+
+  // creating items
+
+  createItem(data: any): Observable<any> {
+    return this.http.post(listingItemsUrl, data);
+  }
+
+  getItemsByListingId(id: any): Observable<MarketPlace[]> {
+    return this.http.get<MarketPlace[]>(`${listingItemsUrl}/${id}`);
+  }
+  
 
 }

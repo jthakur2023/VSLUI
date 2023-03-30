@@ -1,14 +1,15 @@
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+<link rel="stylesheet"
+  href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
 <section id="picture">
-    <div class="card">
-      <img src="http://localhost:8080/images/{{currentListing.image}}" alt="" class="card-img-top" height="500"/>
-    </div>
-    <br/>
-    <br/>
-  </section>
-  <section id="details">
-    <div class="container">
-      <div class="row">
+  <div class="card">
+    <img src="http://localhost:8080/images/{{currentListing.image}}" alt="" class="card-img-top" height="500" />
+  </div>
+  <br />
+  <br />
+</section>
+<section id="details">
+  <div class="container">
+    <div class="row">
       <div class="col-lg-6 mb-6">
         <div class="card">
           <div class="card-body border-0">
@@ -26,34 +27,60 @@
         </div>
       </div>
     </div>
-    <div>
+    <div class="container">
+      
+      <div class="row" *ngIf="items != undefined && items.length>0">
         <br/><br/>
-        <button class="btn btn-link" (click)='saveFavorite()'><span class="material-symbols-outlined">favorite</span></button>
-        <br/><br/>
-        <div  *ngIf="currentListing.userid == currentUser.id">
+        <h6 align="center">Furnished Items:</h6>
+        <div class="col-lg-12 mb-12" *ngFor="let item of items; let i = index">
+          <div class="card">
+            <img src="http://localhost:8080/images/{{item.image}}" alt="" height="200" class="card-img-top" />
+          </div>
+          <div class="row">
+            <div class="card-body" class="col-lg-3 mb-3">
+             Title:{{item.title}}
+            </div>
+            <div class="card-body" class="col-lg-3 mb-3">  
+              Description:{{item.description}}
+            </div>
+            <div class="card-body" class="col-lg-3 mb-3"> 
+              Price:{{item.price}}
+            </div>
+            <div class="card-body" class="col-lg-3 mb-3"> 
+              Condition:{{item.condition}}
+            </div>
+          </div>
+        </div>
+      </div>
+      <div>
+        <br /><br />
+        <button class="btn btn-link" (click)='saveFavorite()'><span
+            class="material-symbols-outlined">favorite</span></button>
+        <br /><br />
+        <div *ngIf="currentListing.userid == currentUser.id">
           <button class="btn btn-danger" (click)="this.deleteListing()">Delete</button>
           <button class="btn btn-warning" (click)="this.updateListing()">Update</button>
           <button class="btn btn-success" (click)="this.addItem()">Add Item</button>
         </div>
-    </div>
-
-  </div>
-  <div class="container">
-    <h5 class="card-title">Comments</h5>
-    <div class="row">
-    <div class="col-lg-12 mb-12" *ngFor="let comment of comments; let i = index">
-    <div class="card">
-      <div class="card-body">  
-        <p class="card-text">{{comment.comment}}</p>
-        <p class="card-text">{{currentUser.username}}</p>
-        <p class="card-text">{{comment.createdAt.substring(0,10)}}</p>
       </div>
-     </div>
+
     </div>
+    <div class="container">
+      <h5 class="card-title">Comments</h5>
+      <div class="row">
+        <div class="col-lg-12 mb-12" *ngFor="let comment of comments; let i = index">
+          <div class="card">
+            <div class="card-body">
+              <p class="card-text">{{comment.comment}}</p>
+              <p class="card-text">{{currentUser.username}}</p>
+              <p class="card-text">{{comment.createdAt.substring(0,10)}}</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <br /><br />
   </div>
-</div>
-<br/><br/>
 </section>
 
 <app-comments [currentListing]="currentListing"></app-comments>
-  

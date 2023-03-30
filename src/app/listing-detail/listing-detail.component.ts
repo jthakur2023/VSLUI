@@ -30,17 +30,6 @@ export class ListingDetailComponent {
   currentUser: any;
   
 
-  // ngOnChanges(changes: SimpleChanges) {
-  //   const listingId = this.route.snapshot.params["id"];
-  //   if (listingId != undefined) {
-  //     this.getListing(listingId);
-  //     this.getCommentsByListingId(listingId);
-  //     this.updateListingViews(this.currentListing);
-  //   } 
-  
-  // }
-
-
   message = '';
 
   constructor(
@@ -113,7 +102,7 @@ export class ListingDetailComponent {
   }
 
   getItemsByListingId(id: string): void {
-    this.marketplaceService.getItemsByListingId(id)
+    this.listingService.getItemsByListingId(id)
       .subscribe({
         next: (data) => {
           this.items = data;

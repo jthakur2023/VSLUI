@@ -1,7 +1,8 @@
 import { Component } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
 import { MarketPlace } from '../models/Marketplace.model';
 import { StorageService } from '../_services/storage.service';
-import { MarketplaceService } from '../_services/marketplace.service';
+import { ListingService } from '../_services/listing.service';
 
 @Component({
   selector: 'app-create-market-place',
@@ -13,20 +14,26 @@ export class CreateMarketPlaceComponent {
 
   data = new FormData();
 
+  listingId= "";
+
   marketplace: MarketPlace = {
     image: '',
     title: '',
     description: '',
     price: '',
-    negotiable: '',
+    condition: '',
   };
   submitted = false;
 
-  constructor(private marketplaceService: MarketplaceService, private storageService: StorageService) { }
+  constructor(private listingService: ListingService, 
+              private storageService: StorageService,
+              private route: ActivatedRoute,
+              private router: Router) { }
 
 
   ngOnInit(): void {
     this.currentUser = this.storageService.getUser();
+    this.listingId = this.route.snapshot.params["id"];
   }
 
   saveItem(): void {
@@ -35,11 +42,12 @@ export class CreateMarketPlaceComponent {
       title:this.marketplace.title,
       description: this.marketplace.description,
       price: this.marketplace.price,
-      negotiable: this.marketplace.negotiable,
+      condition: this.marketplace.condition,
+      listingid: this.listingId,
     };
     
 
-    this.marketplaceService.create(data)
+    this.listingService.createItem(data)
       .subscribe({
         next: (res) => {
           console.log(res);
@@ -57,7 +65,7 @@ export class CreateMarketPlaceComponent {
       title: '',
       description: '',
       price: '',
-      negotiable: '',
+      condition: '',
     };
   }
 
@@ -68,7 +76,7 @@ export class CreateMarketPlaceComponent {
     this.data.append('file', file);
 
 
-    this.marketplaceService.fileUpload(this.data)
+    this.listingService.fileUpload(this.data)
       .subscribe({
         next: (res) => {
           console.log(res);
