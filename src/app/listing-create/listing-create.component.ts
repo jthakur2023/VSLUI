@@ -20,6 +20,8 @@ export class ListingCreateComponent {
     semester: '',
     rent: '',
     image: '',
+    image2: '',
+    image3: ''
   };
   submitted = false;
 
@@ -37,6 +39,8 @@ export class ListingCreateComponent {
       rent: this.listing.rent,
       userid: this.currentUser.id,
       image: this.listing.image,
+      image2: this.listing.image2,
+      image3: this.listing.image3,
     };
     
 
@@ -63,21 +67,38 @@ export class ListingCreateComponent {
 
   upload(event: any) {
     const file = event.target.files[0];
-
-    
-    this.data.append('file', file);
-
-
+    this.data.set('file', file);
     this.listingService.fileUpload(this.data)
       .subscribe({
         next: (res) => {
-          console.log(res);
           this.listing.image = res.filename;
-          //this.submitted = true;
         },
         error: (e) => console.error(e)
       });
   }
 
+  upload2(event: any) {
+    const file = event.target.files[0];
+    this.data.set('file', file);
+    this.listingService.fileUpload(this.data)
+      .subscribe({
+        next: (res) => {
+          this.listing.image2 = res.filename;
+        },
+        error: (e) => console.error(e)
+      });
+  }
+
+  upload3(event: any) {
+    const file = event.target.files[0];
+    this.data.set('file', file);
+    this.listingService.fileUpload(this.data)
+      .subscribe({
+        next: (res) => {
+          this.listing.image3 = res.filename;
+        },
+        error: (e) => console.error(e)
+      });
+  }
 
 }
