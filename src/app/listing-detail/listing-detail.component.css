@@ -9,6 +9,18 @@ h3{
     color: #CACAAA;
     background-color: #010400;
 }
+#slider .carousel-item {
+    height: 500px;
+  }
+  
+  .carousel-caption {
+    font-size: 18px;
+  }
 #commentTitle{
     padding-top: 3%;
 }
+  
+
+  .carousel-item>img {
+    width: 100%
+  }
