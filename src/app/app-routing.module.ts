@@ -11,6 +11,8 @@ import { ListingDetailComponent } from './listing-detail/listing-detail.componen
 import { ListingCreateComponent } from './listing-create/listing-create.component';
 import { UpdateComponent } from './update/update.component';
 import { CreateMarketPlaceComponent } from './create-market-place/create-market-place.component';
+import { ListingItemCreateComponent } from './listing-item-create/listing-item-create.component';
+import { MarketplaceComponent } from './marketplace/marketplace.component';
 
 const routes: Routes = [
   { path: 'home', component: HomeComponent },
@@ -24,7 +26,10 @@ const routes: Routes = [
   { path: 'details/:id', component: ListingDetailComponent },
   { path: 'create', component: ListingCreateComponent },
   { path: 'update/:id', component:UpdateComponent},
-  { path: 'createItem/:id', component:CreateMarketPlaceComponent},
+  { path: 'createItem/:id', component:ListingItemCreateComponent},
+  { path: 'createMarketplaceItem', component:CreateMarketPlaceComponent},
+  { path: 'marketplace', component:MarketplaceComponent},
+
 
   { path: '', redirectTo: 'home', pathMatch: 'full' },
 ];

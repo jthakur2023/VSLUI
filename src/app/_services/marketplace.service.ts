@@ -4,7 +4,8 @@ import { Observable } from 'rxjs';
 import { MarketPlace } from '../models/Marketplace.model';
 
 const baseUrl = 'http://localhost:8080/api/marketplace';
-//const favoritesUrl = 'http://localhost:8080/api/favorites';
+const uploadUrl = 'http://localhost:8080/api/listings/upload';
+
 
 @Injectable({
   providedIn: 'root'
@@ -17,28 +18,24 @@ export class MarketplaceService {
     return this.http.get<MarketPlace[]>(baseUrl);
   }
 
-  listingByUser(id:any):Observable<MarketPlace[]> {
-    return this.http.get<MarketPlace[]>(`${baseUrl}ByUser/${id}`);
+  getMarketplaceByUser(id:any):Observable<MarketPlace[]> {
+    return this.http.get<MarketPlace[]>(`${baseUrl}/${id}`);
   }
 
-  get(id: any): Observable<MarketPlace> {
-    return this.http.get<MarketPlace>(`${baseUrl}/${id}`);
+  findByUniversity(university: any): Observable<MarketPlace[]> {
+    return this.http.get<MarketPlace[]>(`${baseUrl}?university=${university}`);
   }
-
+  
   create(data: any): Observable<any> {
     return this.http.post(baseUrl, data);
   }
-  getItemsByListingId(id:any):Observable<MarketPlace[]> {
-    return this.http.get<MarketPlace[]>(`${baseUrl}ByListingId/${id}`);
+  
+  delete(id: any): Observable<any> {
+    return this.http.delete(`${baseUrl}/${id}`);
   }
-
-  getItemsByUserId(id:any):Observable<MarketPlace[]> {
-    return this.http.get<MarketPlace[]>(`${baseUrl}ByUserId/${id}`);
-  }
-
 
   fileUpload(data:FormData): Observable<any> {
-    return this.http.post(`${baseUrl}/upload`, data);
+    return this.http.post(uploadUrl, data);
   }
 
 

@@ -6,7 +6,7 @@ import { CommentService } from '../_services/comment.service';
 import { MarketplaceService } from '../_services/marketplace.service';
 import { Listing } from '../models/Listing.model';
 import { Comment } from '../models/comment.model';
-import { MarketPlace } from '../models/Marketplace.model';
+import { Item } from '../models/Item.model';
 
 
 @Component({
@@ -41,7 +41,7 @@ export class ListingDetailComponent {
     private router: Router) { }
   
   comments?: Comment[];
-  items?: MarketPlace[];
+  items?: Item[];
   
   ngOnInit(): void {
     const listingId = this.route.snapshot.params["id"];

@@ -1,34 +1,34 @@
+
 import { Component } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { MarketPlace } from '../models/Marketplace.model';
+import { Item } from '../models/Item.model';
 import { StorageService } from '../_services/storage.service';
 import { ListingService } from '../_services/listing.service';
-import { MarketplaceService } from '../_services/marketplace.service';
 
 @Component({
-  selector: 'app-create-market-place',
-  templateUrl: './create-market-place.component.html',
-  styleUrls: ['./create-market-place.component.css']
+  selector: 'app-listing-item-create',
+  templateUrl: './listing-item-create.component.html',
+  styleUrls: ['./listing-item-create.component.css']
 })
-export class CreateMarketPlaceComponent {
+
+
+export class ListingItemCreateComponent {
   currentUser: any;
 
   data = new FormData();
 
   listingId= "";
 
-  marketplace: MarketPlace = {
+  marketplace: Item = {
     image: '',
     title: '',
     description: '',
     price: '',
     condition: '',
-    university:'',
-    contact:'',
   };
   submitted = false;
 
-  constructor(private marketplaceService: MarketplaceService, 
+  constructor(private listingService: ListingService, 
               private storageService: StorageService,
               private route: ActivatedRoute,
               private router: Router) { }
@@ -46,18 +46,16 @@ export class CreateMarketPlaceComponent {
       description: this.marketplace.description,
       price: this.marketplace.price,
       condition: this.marketplace.condition,
-      university: this.marketplace.university,
-      contact: this.marketplace.contact,
-      userid: this.currentUser.id,
+      listingid: this.listingId,
     };
     
 
-    this.marketplaceService.create(data)
+    this.listingService.createItem(data)
       .subscribe({
         next: (res) => {
           console.log(res);
           this.submitted = true;
-          window.location.replace('/marketplace');
+          window.location.replace('/details/'+this.listingId);
         },
         error: (e) => console.error(e)
       });
@@ -71,8 +69,6 @@ export class CreateMarketPlaceComponent {
       description: '',
       price: '',
       condition: '',
-      university:'',
-      contact:''
     };
   }
 
@@ -83,7 +79,7 @@ export class CreateMarketPlaceComponent {
     this.data.append('file', file);
 
 
-    this.marketplaceService.fileUpload(this.data)
+    this.listingService.fileUpload(this.data)
       .subscribe({
         next: (res) => {
           console.log(res);

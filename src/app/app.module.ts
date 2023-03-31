@@ -27,6 +27,7 @@ import { ListingDetailComponent } from './listing-detail/listing-detail.componen
 import { UpdateComponent } from './update/update.component';
 import { MarketplaceComponent } from './marketplace/marketplace.component';
 import { CreateMarketPlaceComponent } from './create-market-place/create-market-place.component';
+import { ListingItemCreateComponent } from './listing-item-create/listing-item-create.component';
 
 @NgModule({
   declarations: [
@@ -41,7 +42,8 @@ import { CreateMarketPlaceComponent } from './create-market-place/create-market-
     CommentsComponent,
     UpdateComponent,
     MarketplaceComponent,
-    CreateMarketPlaceComponent
+    CreateMarketPlaceComponent,
+    ListingItemCreateComponent
   ],
   imports: [
     BrowserModule,

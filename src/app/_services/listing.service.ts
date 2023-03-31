@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { Listing } from '../models/Listing.model';
-import { MarketPlace } from '../models/Marketplace.model';
+import { Item } from '../models/Item.model';
 
 const baseUrl = 'http://localhost:8080/api/listings';
 const favoritesUrl = 'http://localhost:8080/api/favorites';
@@ -74,8 +74,8 @@ export class ListingService {
     return this.http.post(listingItemsUrl, data);
   }
 
-  getItemsByListingId(id: any): Observable<MarketPlace[]> {
-    return this.http.get<MarketPlace[]>(`${listingItemsUrl}/${id}`);
+  getItemsByListingId(id: any): Observable<Item[]> {
+    return this.http.get<Item[]>(`${listingItemsUrl}/${id}`);
   }
   
 

@@ -1,11 +1,9 @@
-export class MarketPlace {
+export class Item {
     id?: any;
     image?: string;
     title?: any;
     description?: any;
     price?: any;
     condition?: any;
-    userId?:any;
-    university?:any;
-    contact?:any;
+    listingid?:any;
   }

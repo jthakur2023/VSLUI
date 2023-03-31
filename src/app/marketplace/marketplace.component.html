@@ -1,0 +1,66 @@
+<br/><br/>
+ <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@1&family=Josefin+Sans:ital,wght@1,300&family=Quicksand&display=swap" rel="stylesheet">
+ <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+<section>
+  <div *ngIf="isAll">
+    <div class="list row"> 
+        <div class="input-group mb-3" id="cardS">
+          <input
+            type="text"
+            class="form-control"
+            placeholder="Search by university"
+            [(ngModel)]="university"
+          />
+          <div class="input-group-append">
+            <button
+              class="btn"
+              (click)="searchUniversity()"
+            >
+            <span class="material-symbols-outlined">
+              search
+              </span>
+            </button>
+          </div>
+          <div class="input-group-append">
+         
+                <a [routerLink]="['/createMarketplaceItem']" class="btn btn-sm"><span class="material-symbols-outlined">
+                    Add
+                    </span></a>
+                &nbsp;&nbsp;
+      
+          </div>
+        </div>
+        
+    </div>  
+ 
+
+    <section id="gallery">
+        <div class="container">
+          <div class="row">
+          <div class="col-lg-4 mb-4" *ngFor="let listing of marketplaces; let i = index">
+          <div class="card">
+            <img src="http://localhost:8080/images/{{listing.image}}" alt="" class="card-img-top" height="200">
+            <div class="card-body">
+              <h5 class="card-title">{{listing.title}}</h5>
+              <p class="card-text">{{listing.university}}</p>
+              <p class="card-text">{{listing.description}}</p>
+              <p class="card-text">{{listing.condition}}</p>
+              <span class="badge">Price:{{listing.price}}</span>
+              <p class="card-text">{{listing.contact}}</p>
+            </div>
+            <div *ngIf="listing.userId == currentUser.id">
+              <br/><br/>
+              <button class="btn btn-link" (click)='removeMarketplace(listing)'><span class="material-symbols-outlined">
+                delete
+                </span></button>
+          </div>
+      
+           </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    
