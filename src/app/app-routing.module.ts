@@ -14,6 +14,7 @@ import { CreateMarketPlaceComponent } from './create-market-place/create-market-
 import { ListingItemCreateComponent } from './listing-item-create/listing-item-create.component';
 import { MarketplaceComponent } from './marketplace/marketplace.component';
 
+
 const routes: Routes = [
   { path: 'home', component: HomeComponent },
   { path: 'login', component: LoginComponent },
@@ -29,7 +30,6 @@ const routes: Routes = [
   { path: 'createItem/:id', component:ListingItemCreateComponent},
   { path: 'createMarketplaceItem', component:CreateMarketPlaceComponent},
   { path: 'marketplace', component:MarketplaceComponent},
-
 
   { path: '', redirectTo: 'home', pathMatch: 'full' },
 ];
