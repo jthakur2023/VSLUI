@@ -1,71 +1,70 @@
-
-<br /><br /> 
-<link rel="preconnect" href="https://fonts.googleapis.com"/>
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<br /><br />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link
   href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@1&family=Josefin+Sans:ital,wght@1,300&family=Quicksand&family=Raleway:wght@200&display=swap"
-  rel="stylesheet"/>
-<section>  
+  rel="stylesheet" />
 <section>
-  <div *ngIf="isAll">
-    <div class="list row">
-      <div class="input-group mb-3" id="cardS">
-        <input type="text" class="form-control" placeholder="Search by university" [(ngModel)]="university" />
-        <div class="input-group-append">
-          <button class="btn" (click)="searchUniversity()">
-            <span class="material-symbols-outlined">
-              search
-            </span>
-          </button>
+  <section>
+    <div *ngIf="isAll">
+      <div class="list row">
+        <div class="input-group mb-3" id="cardS">
+          <input type="text" class="form-control" placeholder="Search by university" [(ngModel)]="university" />
+          <div class="input-group-append">
+            <button class="btn" (click)="searchUniversity()">
+              <span class="material-symbols-outlined">
+                search
+              </span>
+            </button>
+          </div>
         </div>
       </div>
+      <nav class="navbar navbar-expand navbar-dark bg-dark" id="filterNavbar">
+        <ul class="navbar-nav mr-auto">
+          <div class="btn-group">
+            <button type="button" class="dropdown-toggle dropdown-toggle-split" data-bs-toggle="dropdown"
+              aria-expanded="false">
+              <span class="visually-hidden">Toggle Dropdown</span>
+            </button>
+            <ul class="dropdown-menu">
+              <li><button class="dropdown-item" type="button">Summer</button></li>
+              <li><button class="dropdown-item" type="button">Fall</button></li>
+              <li><button class="dropdown-item" type="button">Spring</button></li>
+            </ul>
+          </div>
+          <div class="dropdown">
+            <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown"
+              aria-expanded="false">
+              Type
+            </button>
+            <ul class="dropdown-menu">
+              <li><button class="dropdown-item" type="button">Apartment</button></li>
+              <li><button class="dropdown-item" type="button">Condo</button></li>
+              <li><button class="dropdown-item" type="button">Townhouse</button></li>
+              <li><button class="dropdown-item" type="button">Single Family House</button></li>
+            </ul>
+          </div>
+          <div class="dropdown">
+            <button class="btn btn-secondary dropdown-toggle" type="button" id="furnishedDrop" data-toggle="dropdown"
+              aria-haspopup="true" aria-expanded="false">
+              Furnished
+            </button>
+            <ul class="dropdown-menu" aria-labelledby="furnishedDrop">
+              <li><button class="dropdown-item" type="button">Yes</button></li>
+              <li><button class="dropdown-item" type="button">No</button></li>
+            </ul>
+          </div>
+        </ul>
+      </nav>
     </div>
-    <nav class="navbar navbar-expand navbar-dark bg-dark" id="filterNavbar">
-      <ul class="navbar-nav mr-auto">
-        <div class="btn-group">
-          <button type="button" class="dropdown-toggle dropdown-toggle-split" data-bs-toggle="dropdown"
-            aria-expanded="false">
-            <span class="visually-hidden">Toggle Dropdown</span>
-          </button>
-          <ul class="dropdown-menu">
-            <li><button class="dropdown-item" type="button">Summer</button></li>
-            <li><button class="dropdown-item" type="button">Fall</button></li>
-            <li><button class="dropdown-item" type="button">Spring</button></li>
-          </ul>
-        </div>
-        <div class="dropdown">
-          <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown"
-            aria-expanded="false">
-            Type
-          </button>
-          <ul class="dropdown-menu">
-            <li><button class="dropdown-item" type="button">Apartment</button></li>
-            <li><button class="dropdown-item" type="button">Condo</button></li>
-            <li><button class="dropdown-item" type="button">Townhouse</button></li>
-            <li><button class="dropdown-item" type="button">Single Family House</button></li>
-          </ul>
-        </div>
-        <div class="dropdown">
-          <button class="btn btn-secondary dropdown-toggle" type="button" id="furnishedDrop" data-toggle="dropdown"
-            aria-haspopup="true" aria-expanded="false">
-            Furnished
-          </button>
-          <ul class="dropdown-menu" aria-labelledby="furnishedDrop">
-            <li><button class="dropdown-item" type="button">Yes</button></li>
-            <li><button class="dropdown-item" type="button">No</button></li>
-          </ul>
-        </div>
-      </ul>
-    </nav>
-  </div>
-</section>
-<section id="gallery">
- 
+  </section>
+  <section id="gallery">
+
     <div class="row">
       <div class="col-lg-4 mb-4" *ngFor="let listing of listings; let i = index">
         <div class="content"> <a [routerLink]="['/details',listing.id]">
-            <div class="content-overlay"></div><img src="http://localhost:8080/images/{{listing.image}}"
-              height="200" class="content-image">
+            <div class="content-overlay"></div><img src="http://localhost:8080/images/{{listing.image}}" height="200"
+              class="content-image">
             <div class="content-details fadeIn-bottom">
               <h3 class="content-title" id="title">{{listing.address}}</h3>
               <p class="content-text"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
@@ -88,6 +87,6 @@
         </div>
       </div>
     </div>
-  
-</section>
+
+  </section>
 </section>

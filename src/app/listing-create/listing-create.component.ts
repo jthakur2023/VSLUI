@@ -23,7 +23,16 @@ export class ListingCreateComponent {
     rent: '',
     image: '',
     image2: '',
-    image3: ''
+    image3: '',
+    laundry:'',
+    gym:'',
+    pool:'',
+    parking:'',
+    type:'',
+    sublease:'',
+    phoneNumber:'',
+    email:'',
+    personalNote:''
   };
   submitted = false;
   uni: any;
@@ -50,6 +59,16 @@ export class ListingCreateComponent {
       university: this.listing.university,
       semester: this.listing.semester,
       rent: this.listing.rent,
+      laundry: this.listing.laundry,
+      gym: this.listing.gym,
+      pool: this.listing.pool,
+      parking: this.listing.parking,
+      type: this.listing.type,
+      sublease: this.listing.sublease,
+      phoneNumber: this.listing.phoneNumber,
+      email: this.listing.email,
+      personalNote: this.listing.personalNote,
+  
       userid: this.currentUser.id,
       image: this.listing.image,
       image2: this.listing.image2,
