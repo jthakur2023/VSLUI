@@ -1,188 +1,101 @@
 <div class="col-md-12">
-    <div class="card card-container">
-        <div>
-        <br/>
-        <h4 align="center">Create a New Listing</h4>
-        <br/>
-        <div class="submit-form">
-            <div *ngIf="!submitted">
-                <div class="form-group">
-                    <label for="university">University</label>
-                    <input
-                    type="text"
-                    class="form-control"
-                    (input)="suggest()"
-                    [formControl]="typeahead"
-                    id="university"
-                    required
-                    [(ngModel)]="listing.university"
-                    name="university"
-                    />
-                    <div class="suggestions" *ngIf="suggestions.length">
-                        <p *ngFor="let s of suggestions">{{s}}</p>
-                    </div>
-                </div>
-                <div class="form-group">
-                    <label for="semester">Semester</label>
-                    <input
-                    class="form-control"
-                    id="semester"
-                    required
-                    [(ngModel)]="listing.semester"
-                    name="semester"
-                    />
-                </div>        
-                <div class="form-group">
-                    <label for="address">Address</label>
-                    <input
-                    type="text"
-                    class="form-control"
-                    id="address"
-                    required
-                    [(ngModel)]="listing.address"
-                    name="address"
-                    />
-                </div>
-                <div class="form-group">
-                    <label for="gym">Gym</label>
-                    <input
-                    type="text"
-                    class="form-control"
-                    id="gym"
-                    required
-                    [(ngModel)]="listing.gym"
-                    name="gym"
-                    />
-                </div>
-                <div class="form-group">
-                    <label for="laundry">Laundry</label>
-                    <input
-                    type="text"
-                    class="form-control"
-                    id="laundry"
-                    required
-                    [(ngModel)]="listing.laundry"
-                    name="laundry"
-                    />
-                </div>
-                <div class="form-group">
-                    <label for="pool">Pool</label>
-                    <input
-                    type="text"
-                    class="form-control"
-                    id="pool"
-                    required
-                    [(ngModel)]="listing.pool"
-                    name="pool"
-                    />
-                </div>
-
-                <div class="form-group">
-                    <label for="parking">Parking</label>
-                    <input
-                    type="text"
-                    class="form-control"
-                    id="address"
-                    required
-                    [(ngModel)]="listing.parking"
-                    name="parking"
-                    />
-                </div> 
-
-                <div class="form-group">
-                    <label for="type">Type</label>
-                    <input
-                    type="text"
-                    class="form-control"
-                    id="type"
-                    required
-                    [(ngModel)]="listing.type"
-                    name="type"
-                    />
-                </div>
-                <div class="form-group">
-                  <label for="sublease">Sublease</label>
-                  <input
-                  type="text"
-                  class="form-control"
-                  id="sublease"
-                  required
-                  [(ngModel)]="listing.sublease"
-                  name="sublease"
-                  />
-              </div>
-              <div class="form-group">
-                <label for="phoneNumber">Phone Number</label>
-                <input
-                type="text"
-                class="form-control"
-                id="phoneNumber"
-                required
-                [(ngModel)]="listing.phoneNumber"
-                name="phoneNumber"
-                />
+  <div class="card card-container">
+    <div>
+      <br />
+      <h4 align="center">Create a New Listing</h4>
+      <br />
+      <div class="submit-form">
+        <div *ngIf="!submitted">
+          <div class="form-group">
+            <label for="university">University</label>
+            <input type="text" class="form-control" (input)="suggest()" [formControl]="typeahead" id="university"
+              required [(ngModel)]="listing.university" name="university" />
+            <div class="suggestions" *ngIf="suggestions.length">
+              <p *ngFor="let s of suggestions">{{s}}</p>
             </div>
-            <div class="form-group">
-              <label for="email">Email</label>
-              <input
-              type="text"
-              class="form-control"
-              id="email"
-              required
-              [(ngModel)]="listing.email"
-              name="email"
-              />
+          </div>
+          <div class="form-group">
+            <label for="semester">Semester</label>
+            <input class="form-control" id="semester" required [(ngModel)]="listing.semester" name="semester" />
+          </div>
+          <div class="form-group">
+            <label for="address">Address</label>
+            <input type="text" class="form-control" id="address" required [(ngModel)]="listing.address"
+              name="address" />
+          </div>
+          <div class="form-group">
+            <label for="gym">Gym</label>
+            <input type="text" class="form-control" id="gym" required [(ngModel)]="listing.gym" name="gym" />
+          </div>
+          <div class="form-group">
+            <label for="laundry">Laundry</label>
+            <input type="text" class="form-control" id="laundry" required [(ngModel)]="listing.laundry"
+              name="laundry" />
+          </div>
+          <div class="form-group">
+            <label for="wifi">Wifi</label>
+            <input type="text" class="form-control" id="wifi" required [(ngModel)]="listing.wifi" name="wifi" />
+          </div>
+          <div class="form-group">
+            <label for="pool">Pool</label>
+            <input type="text" class="form-control" id="pool" required [(ngModel)]="listing.pool" name="pool" />
+          </div>
+
+          <div class="form-group">
+            <label for="parking">Parking</label>
+            <input type="text" class="form-control" id="parking" required [(ngModel)]="listing.parking"
+              name="parking" />
+          </div>
+
+          <div class="form-group">
+            <label for="type">Type</label>
+            <input type="text" class="form-control" id="type" required [(ngModel)]="listing.type" name="type" />
+          </div>
+          <div class="form-group">
+            <label for="sublease">Sublease</label>
+            <input type="text" class="form-control" id="sublease" required [(ngModel)]="listing.sublease"
+              name="sublease" />
+          </div>
+          <div class="form-group">
+            <label for="phoneNumber">Phone Number</label>
+            <input type="text" class="form-control" id="phoneNumber" required [(ngModel)]="listing.phoneNumber"
+              name="phoneNumber" />
+          </div>
+          <div class="form-group">
+            <label for="email">Email</label>
+            <input type="text" class="form-control" id="email" required [(ngModel)]="listing.email" name="email" />
           </div>
           <div class="form-group">
             <label for="personalNote">Personal Note</label>
-            <input
-            type="text"
-            class="form-control"
-            id="personalNote"
-            required
-            [(ngModel)]="listing.personalNote"
-            name="personalNote"
-            />
+            <input type="text" class="form-control" id="personalNote" required [(ngModel)]="listing.personalNote"
+              name="personalNote" />
+          </div>
+
+          <div class="form-group">
+            <label for="rent">Rent</label>
+            <input class="form-control" id="rent" required [(ngModel)]="listing.rent" name="rent" />
+          </div>
+
+          <div class="form-group">
+            <label for="gender">Gender</label>
+            <input type="text" class="form-control" id="gender" required [(ngModel)]="listing.gender" name="address" />
+          </div>
+
+
+          <input type="file" (change)="upload($event)" />
+          <input type="file" (change)="upload2($event)" />
+          <input type="file" (change)="upload3($event)" />
+          <br /><br />
+          <button (click)="saveListing()" class="btn btn-success">Submit</button>
+
+
         </div>
 
-            <div class="form-group">
-                <label for="rent">Rent</label>
-                <input
-                class="form-control"
-                id="rent"
-                required
-                [(ngModel)]="listing.rent"
-                name="rent"
-                />
-            </div>
-
-            <div class="form-group">
-                <label for="address">Gender</label>
-                <input
-                type="text"
-                class="form-control"
-                id="address"
-                required
-                [(ngModel)]="listing.gender"
-                name="address"
-                />
-            </div>
-
-
-            <input type="file" (change)="upload($event)" />
-            <input type="file" (change)="upload2($event)" />
-            <input type="file" (change)="upload3($event)" />
-            <br/><br/>
-            <button (click)="saveListing()" class="btn btn-success">Submit</button>
-
-            
-            </div>
-             
-            <div *ngIf="submitted">
-            <h4>Listing was submitted successfully!</h4>
-            <button class="btn btn-success" (click)="newListing()">Add</button>
-            </div>
+        <div *ngIf="submitted">
+          <h4>Listing was submitted successfully!</h4>
+          <button class="btn btn-success" (click)="newListing()">Add</button>
         </div>
-        </div>
+      </div>
     </div>
-</div>    
+  </div>
+</div>

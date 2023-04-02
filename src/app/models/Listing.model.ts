@@ -21,4 +21,5 @@ export class Listing {
   phoneNumber?: any;
   email?: any;
   personalNote?: any;
+  wifi?:any;
 }

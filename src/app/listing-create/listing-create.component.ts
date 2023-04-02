@@ -32,7 +32,8 @@ export class ListingCreateComponent {
     sublease:'',
     phoneNumber:'',
     email:'',
-    personalNote:''
+    personalNote:'',
+    wifi:''
   };
   submitted = false;
   uni: any;
@@ -68,6 +69,7 @@ export class ListingCreateComponent {
       phoneNumber: this.listing.phoneNumber,
       email: this.listing.email,
       personalNote: this.listing.personalNote,
+      wifi: this.listing.wifi,
   
       userid: this.currentUser.id,
       image: this.listing.image,
