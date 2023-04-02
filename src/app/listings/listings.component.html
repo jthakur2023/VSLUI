@@ -1,33 +1,30 @@
-  <br/><br/>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@1&family=Josefin+Sans:ital,wght@1,300&family=Quicksand&family=Raleway:wght@200&display=swap" rel="stylesheet">
+
+<br /><br /> 
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link
+  href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@1&family=Josefin+Sans:ital,wght@1,300&family=Quicksand&family=Raleway:wght@200&display=swap"
+  rel="stylesheet"/>
+<section>  
 <section>
   <div *ngIf="isAll">
-    <div class="list row"> 
-        <div class="input-group mb-3" id="cardS">
-          <input
-            type="text"
-            class="form-control"
-            placeholder="Search by university"
-            [(ngModel)]="university"
-          />
-          <div class="input-group-append">
-            <button
-              class="btn"
-              (click)="searchUniversity()"
-            >
+    <div class="list row">
+      <div class="input-group mb-3" id="cardS">
+        <input type="text" class="form-control" placeholder="Search by university" [(ngModel)]="university" />
+        <div class="input-group-append">
+          <button class="btn" (click)="searchUniversity()">
             <span class="material-symbols-outlined">
               search
-              </span>
-            </button>
-          </div>
+            </span>
+          </button>
         </div>
-    </div>  
+      </div>
+    </div>
     <nav class="navbar navbar-expand navbar-dark bg-dark" id="filterNavbar">
-      <ul class="navbar-nav mr-auto" >
+      <ul class="navbar-nav mr-auto">
         <div class="btn-group">
-          <button type="button" class="dropdown-toggle dropdown-toggle-split" data-bs-toggle="dropdown" aria-expanded="false">
+          <button type="button" class="dropdown-toggle dropdown-toggle-split" data-bs-toggle="dropdown"
+            aria-expanded="false">
             <span class="visually-hidden">Toggle Dropdown</span>
           </button>
           <ul class="dropdown-menu">
@@ -37,7 +34,8 @@
           </ul>
         </div>
         <div class="dropdown">
-          <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+          <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown"
+            aria-expanded="false">
             Type
           </button>
           <ul class="dropdown-menu">
@@ -48,7 +46,8 @@
           </ul>
         </div>
         <div class="dropdown">
-          <button class="btn btn-secondary dropdown-toggle" type="button" id="furnishedDrop" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          <button class="btn btn-secondary dropdown-toggle" type="button" id="furnishedDrop" data-toggle="dropdown"
+            aria-haspopup="true" aria-expanded="false">
             Furnished
           </button>
           <ul class="dropdown-menu" aria-labelledby="furnishedDrop">
@@ -58,35 +57,37 @@
         </div>
       </ul>
     </nav>
-  </div> 
-
+  </div>
 </section>
 <section id="gallery">
-<div class="container">
-  <div class="row">
-    <div class="col-lg-4 mb-4" *ngFor="let listing of listings; let i = index">
-          <div class="content"> <a [routerLink]="['/details',listing.id]">
-                  <div class="content-overlay"></div><img src="http://localhost:8080/images/{{listing.image}}" class="content-image">
-                  <div class="content-details fadeIn-bottom">
-                      <h3 class="content-title" id="title">{{listing.address}}</h3>
-                      <p class="content-text"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-geo-alt" viewBox="0 0 16 16">
-                        <path d="M12.166 8.94c-.524 1.062-1.234 2.12-1.96 3.07A31.493 31.493 0 0 1 8 14.58a31.481 31.481 0 0 1-2.206-2.57c-.726-.95-1.436-2.008-1.96-3.07C3.304 7.867 3 6.862 3 6a5 5 0 0 1 10 0c0 .862-.305 1.867-.834 2.94zM8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10z"/>
-                        <path d="M8 8a2 2 0 1 1 0-4 2 2 0 0 1 0 4zm0 1a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"/>
-                      </svg> {{listing.university}}</p>
-                      <div *ngIf="isFavorite">
-                        <br/><br/>
-                        <button class="btn" (click)='removeFavorite(listing)' id="deleteFav"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="white" class="bi bi-trash3" viewBox="0 0 16 16">
-                          <path d="M6.5 1h3a.5.5 0 0 1 .5.5v1H6v-1a.5.5 0 0 1 .5-.5ZM11 2.5v-1A1.5 1.5 0 0 0 9.5 0h-3A1.5 1.5 0 0 0 5 1.5v1H2.506a.58.58 0 0 0-.01 0H1.5a.5.5 0 0 0 0 1h.538l.853 10.66A2 2 0 0 0 4.885 16h6.23a2 2 0 0 0 1.994-1.84l.853-10.66h.538a.5.5 0 0 0 0-1h-.995a.59.59 0 0 0-.01 0H11Zm1.958 1-.846 10.58a1 1 0 0 1-.997.92h-6.23a1 1 0 0 1-.997-.92L3.042 3.5h9.916Zm-7.487 1a.5.5 0 0 1 .528.47l.5 8.5a.5.5 0 0 1-.998.06L5 5.03a.5.5 0 0 1 .47-.53Zm5.058 0a.5.5 0 0 1 .47.53l-.5 8.5a.5.5 0 1 1-.998-.06l.5-8.5a.5.5 0 0 1 .528-.47ZM8 4.5a.5.5 0 0 1 .5.5v8.5a.5.5 0 0 1-1 0V5a.5.5 0 0 1 .5-.5Z"/>
-                        </svg></button>
-                    </div>
-                  </div>
-              </a> 
+ 
+    <div class="row">
+      <div class="col-lg-4 mb-4" *ngFor="let listing of listings; let i = index">
+        <div class="content"> <a [routerLink]="['/details',listing.id]">
+            <div class="content-overlay"></div><img src="http://localhost:8080/images/{{listing.image}}"
+              height="200" class="content-image">
+            <div class="content-details fadeIn-bottom">
+              <h3 class="content-title" id="title">{{listing.address}}</h3>
+              <p class="content-text"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                  class="bi bi-geo-alt" viewBox="0 0 16 16">
+                  <path
+                    d="M12.166 8.94c-.524 1.062-1.234 2.12-1.96 3.07A31.493 31.493 0 0 1 8 14.58a31.481 31.481 0 0 1-2.206-2.57c-.726-.95-1.436-2.008-1.96-3.07C3.304 7.867 3 6.862 3 6a5 5 0 0 1 10 0c0 .862-.305 1.867-.834 2.94zM8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10z" />
+                  <path d="M8 8a2 2 0 1 1 0-4 2 2 0 0 1 0 4zm0 1a3 3 0 1 0 0-6 3 3 0 0 0 0 6z" />
+                </svg> {{listing.university}}</p>
+              <div *ngIf="isFavorite">
+                <br /><br />
+                <button class="btn" (click)='removeFavorite(listing)' id="deleteFav"><svg
+                    xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="white" class="bi bi-trash3"
+                    viewBox="0 0 16 16">
+                    <path
+                      d="M6.5 1h3a.5.5 0 0 1 .5.5v1H6v-1a.5.5 0 0 1 .5-.5ZM11 2.5v-1A1.5 1.5 0 0 0 9.5 0h-3A1.5 1.5 0 0 0 5 1.5v1H2.506a.58.58 0 0 0-.01 0H1.5a.5.5 0 0 0 0 1h.538l.853 10.66A2 2 0 0 0 4.885 16h6.23a2 2 0 0 0 1.994-1.84l.853-10.66h.538a.5.5 0 0 0 0-1h-.995a.59.59 0 0 0-.01 0H11Zm1.958 1-.846 10.58a1 1 0 0 1-.997.92h-6.23a1 1 0 0 1-.997-.92L3.042 3.5h9.916Zm-7.487 1a.5.5 0 0 1 .528.47l.5 8.5a.5.5 0 0 1-.998.06L5 5.03a.5.5 0 0 1 .47-.53Zm5.058 0a.5.5 0 0 1 .47.53l-.5 8.5a.5.5 0 1 1-.998-.06l.5-8.5a.5.5 0 0 1 .528-.47ZM8 4.5a.5.5 0 0 1 .5.5v8.5a.5.5 0 0 1-1 0V5a.5.5 0 0 1 .5-.5Z" />
+                  </svg></button>
+              </div>
             </div>
+          </a>
+        </div>
       </div>
     </div>
-</div>
-</section>
   
- 
-
- 
+</section>
+</section>
