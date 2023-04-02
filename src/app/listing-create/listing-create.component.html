@@ -1,4 +1,4 @@
-<div class="col-md-12">
+<!-- <div class="col-md-12">
   <div class="card card-container">
     <div>
       <br />
@@ -95,6 +95,123 @@
           <h4>Listing was submitted successfully!</h4>
           <button class="btn btn-success" (click)="newListing()">Add</button>
         </div>
+      </div>
+    </div>
+  </div>
+</div> -->
+
+
+
+<div class="container-fluid px-1 py-5 mx-auto">
+  <div class="row d-flex justify-content-center">
+    <div class="col-xl-7 col-lg-8 col-md-9 col-11 text-center">
+      <div class="card">
+        <h5 class="text-center mb-4">Create New Listing</h5>
+        <form class="form-card">
+          <div class="row justify-content-between text-left">
+            <div class="form-group col-sm-6 flex-column d-flex">
+              <label class="form-control-label px-3">University<span class="text-danger"> *</span></label> <input
+                class="form-control" id="university" required [(ngModel)]="listing.university" name="university" />
+            </div>
+            <div class="form-group col-sm-6 flex-column d-flex">
+              <label class="form-control-label px-3">Type<span class="text-danger"> *</span></label>
+              <select class="form-control" id="type" required [(ngModel)]="listing.type" name="type">
+                <option>Apartment</option>
+                <option>House</option>
+                <option>Multi-Home</option>
+                <option>Other</option>
+              </select>
+            </div>
+          </div>
+          <div class="row justify-content-between text-left">
+            <div class="form-group col-sm-6 flex-column d-flex">
+              <label class="form-control-label px-3">Semester<span class="text-danger"> *</span></label> <input
+                type="text" class="form-control" id="semester" required [(ngModel)]="listing.semester"
+                name="semester" />
+            </div>
+            <div class="form-group col-sm-6 flex-column d-flex">
+              <label class="form-control-label px-3">Rent<span class="text-danger"> *</span></label> <input type="text"
+                class="form-control" id="rent" required [(ngModel)]="listing.rent" name="rent" />
+            </div>
+          </div>
+          <div class="row justify-content-between text-left">
+            <div class="form-group col-sm-6 flex-column d-flex">
+              <label class="form-control-label px-3">Address<span class="text-danger"> *</span></label> <input
+                class="form-control" id="address" required [(ngModel)]="listing.address" name="address" />
+            </div>
+            <div class="form-group col-sm-6 flex-column d-flex">
+              <label class="form-control-label px-3">Wifi<span class="text-danger"> *</span></label> <input
+                class="form-control" id="wifi" required [(ngModel)]="listing.wifi" name="wifi" />
+            </div>
+          </div>
+ 
+          <div class="row justify-content-between text-left">
+            <div class="form-group col-sm-6 flex-column d-flex">
+              <label class="form-control-label px-3">Laundry<span class="text-danger"> *</span></label> <input
+                class="form-control" id="laundry" required [(ngModel)]="listing.laundry" name="laundry" />
+            </div>
+            <div class="form-group col-sm-6 flex-column d-flex">
+              <label class="form-control-label px-3">Gym<span class="text-danger"> *</span></label> <input
+                class="form-control" id="gym" required [(ngModel)]="listing.gym" name="gym" />
+            </div>
+          </div>
+
+          <div class="row justify-content-between text-left">
+            <div class="form-group col-sm-6 flex-column d-flex">
+              <label class="form-control-label px-3">Parking<span class="text-danger"> *</span></label> <input
+                class="form-control" id="parking" required [(ngModel)]="listing.parking" name="parking" />
+            </div>
+            <div class="form-group col-sm-6 flex-column d-flex">
+              <label class="form-control-label px-3">Pool<span class="text-danger"> *</span></label> <input
+                class="form-control" id="pool" required [(ngModel)]="listing.pool" name="pool" />
+            </div>
+          </div>
+
+          <div class="row justify-content-between text-left">
+            <div class="form-group col-sm-6 flex-column d-flex">
+              <label class="form-control-label px-3">Phone<span class="text-danger"> *</span></label> <input
+                class="form-control" id="phoneNumber" required [(ngModel)]="listing.phoneNumber" name="phoneNumber" />
+            </div>
+            <div class="form-group col-sm-6 flex-column d-flex">
+              <label class="form-control-label px-3">Email<span class="text-danger"> *</span></label> <input
+                class="form-control" id="email" required [(ngModel)]="listing.email" name="email" />
+            </div>
+          </div>
+          <div class="row justify-content-between text-left">
+            <div class="form-group col-sm-6 flex-column d-flex">
+              <label class="form-control-label px-3">Gender<span class="text-danger"> *</span></label> <input
+                class="form-control" id="gender" required [(ngModel)]="listing.gender" name="gender" />
+            </div>
+            <div class="form-group col-sm-6 flex-column d-flex">
+              <label class="form-control-label px-3">Personal Note<span class="text-danger"> *</span></label> <input
+                class="form-control" id="personalNote" required [(ngModel)]="listing.personalNote" name="personalNote" />
+            </div>
+          </div>
+
+
+          <div class="row justify-content-between text-left">
+            <div class="form-group col-sm-6 flex-column d-flex">
+              <label class="form-control-label px-3">Image 1<span class="text-danger"> *</span></label> <input type="file"
+                (change)="upload($event)" />
+            </div>
+          <div class="form-group col-sm-6 flex-column d-flex">
+              <label class="form-control-label px-3">Image 2<span class="text-danger"> *</span></label> <input type="file"
+                (change)="upload2($event)" />
+            </div>
+          </div>
+          <div class="row justify-content-between text-left">
+            <div class="form-group col-sm-6 flex-column d-flex">
+              <label class="form-control-label px-3">Image 3<span class="text-danger"> *</span></label> <input type="file"
+                (change)="upload3($event)" />
+            </div>
+          <div class="form-group col-sm-6 flex-column d-flex">
+            </div>
+          </div>
+ 
+          <div class="row justify-content-end">
+            <div class="form-group"> <button (click)="saveListing()" class="btn btn-success">Add</button> </div>
+          </div>
+        </form>
       </div>
     </div>
   </div>
