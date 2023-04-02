@@ -6,4 +6,5 @@ export class Item {
     price?: any;
     condition?: any;
     listingid?:any;
+    type?: any;
   }

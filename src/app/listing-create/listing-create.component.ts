@@ -2,7 +2,8 @@ import { Component } from '@angular/core';
 import { Listing } from '../models/Listing.model';
 import { ListingService } from '../_services/listing.service';
 import { StorageService } from '../_services/storage.service';
-
+import { HttpClient } from '@angular/common/http';
+import { FormControl } from '@angular/forms';
 @Component({
   selector: 'app-listing-create',
   templateUrl: './listing-create.component.html',
@@ -11,6 +12,7 @@ import { StorageService } from '../_services/storage.service';
 export class ListingCreateComponent {
 
   currentUser: any;
+  typeahead: FormControl = new FormControl();
 
   data = new FormData();
 
@@ -24,11 +26,22 @@ export class ListingCreateComponent {
     image3: ''
   };
   submitted = false;
+  uni: any;
+  uniNames: any [] = [];
+  universityList: any [] =[];
+  suggestions: string[] = [];
 
-  constructor(private listingService: ListingService, private storageService: StorageService) { }
+
+  constructor(private listingService: ListingService, private storageService: StorageService, private http: HttpClient) { }
 
   ngOnInit(): void {
     this.currentUser = this.storageService.getUser();
+  }
+
+  suggest(){
+    this.suggestions = this.universityList
+    .filter(c => c.startsWith(this.typeahead.value))
+    .slice(0, 5);
   }
 
   saveListing(): void {

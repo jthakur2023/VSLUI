@@ -1,13 +1,11 @@
 h1{
-    font-family: 'Roboto Mono', monospace;
+   font-family: 'Raleway', sans-serif;
     color: #49A078;
-    background-color: #010400;
 }
 h3{
     font-family: 'Roboto Mono', monospace;
     font-style: oblique;
     color: #CACAAA;
-    background-color: #010400;
 }
 #slider .carousel-item {
     height: 500px;
@@ -41,7 +39,51 @@ h3{
   border-style: none;
 }
   
+#personalButtons{
+  position: right;
+}
+#card{
+    
+    border: none;
+    box-shadow: 5px 6px 6px 2px #e9ecef;
+    border-radius: 4px;
+
+}
 
   .carousel-item>img {
     width: 100%
   }
+
+  .collapsible-link::before {
+    content: '';
+    width: 14px;
+    height: 2px;
+    background: #333;
+    position: absolute;
+    top: calc(50% - 1px);
+    right: 1rem;
+    display: block;
+    transition: all 0.3s;
+  }
+  
+  /* Vertical line */
+  .collapsible-link::after {
+    content: '';
+    width: 2px;
+    height: 14px;
+    background: #333;
+    position: absolute;
+    top: calc(50% - 7px);
+    right: calc(1rem + 6px);
+    display: block;
+    transition: all 0.3s;
+  }
+  
+  .collapsible-link[aria-expanded='true']::after {
+    transform: rotate(90deg) translateX(-1px);
+  }
+  
+  .collapsible-link[aria-expanded='true']::before {
+    transform: rotate(180deg);
+  }
+  

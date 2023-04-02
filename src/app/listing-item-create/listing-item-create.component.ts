@@ -24,7 +24,6 @@ export class ListingItemCreateComponent {
     title: '',
     description: '',
     price: '',
-    condition: '',
   };
   submitted = false;
 
@@ -45,7 +44,6 @@ export class ListingItemCreateComponent {
       title:this.marketplace.title,
       description: this.marketplace.description,
       price: this.marketplace.price,
-      condition: this.marketplace.condition,
       listingid: this.listingId,
     };
     
@@ -68,7 +66,6 @@ export class ListingItemCreateComponent {
       title: '',
       description: '',
       price: '',
-      condition: '',
     };
   }
 

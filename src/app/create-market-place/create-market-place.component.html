@@ -1,4 +1,4 @@
-<div class="col-md-12">
+<!-- <div class="col-md-12">
     <div class="card card-container">
         <div>
         <br/>
@@ -25,7 +25,19 @@
                     [(ngModel)]="marketplace.title"
                     name="title"
                     />
-                </div>        
+                </div>       
+                <div class="form-group">
+                    <label for="type">Type</label>
+                    <select class="form-control" id="type"
+                    required
+                    [(ngModel)]="marketplace.type"
+                    name="type">
+                        <option>Electronic</option>
+                        <option>Kitchen</option>
+                        <option>Bedroom/Common Area</option>
+                        <option>Other</option>
+                    </select>
+                </div>     
                 <div class="form-group">
                     <label for="description">Description of Item</label>
                     <input
@@ -49,15 +61,17 @@
                     />
                 </div>
                 <div class="form-group">
-                    <label for="negotiable">Condition</label>
-                    <input
-                    type="text"
+                    <label for="negotiable">Negotiable</label>
+                    <select
                     class="form-control"
                     id="negotiable"
                     required
-                    [(ngModel)]="marketplace.condition"
+                    [(ngModel)]="marketplace.negotiable"
                     name="negotiable"
-                    />
+                    >
+                    <option>Set Price</option>
+                    <option>negotiable</option>
+                    </select>
                 </div>
                 <div class="form-group">
                     <label for="contact">Contact</label>
@@ -86,8 +100,102 @@
         </div>
     </div>
 </div>    
-
-  
-
-
- 
+  -->
+<div class="container-fluid px-1 py-5 mx-auto">
+    <div class="row d-flex justify-content-center">
+        <div class="col-xl-7 col-lg-8 col-md-9 col-11 text-center">
+            <div class="card">
+                <h5 class="text-center mb-4">Add Item</h5>
+                <form class="form-card">
+                    <div class="row justify-content-between text-left">
+                        <div class="form-group col-sm-6 flex-column d-flex">
+                            <label class="form-control-label px-3">Title<span
+                                    class="text-danger"> *</span></label> <input
+                                class="form-control"
+                                id="title"
+                                required
+                                [(ngModel)]="marketplace.title"
+                                name="title"
+                                /> </div>
+                        <div class="form-group col-sm-6 flex-column d-flex">
+                            <label class="form-control-label px-3">Type<span
+                                    class="text-danger"> *</span></label>
+                            <select class="form-control" id="type"
+                                required
+                                [(ngModel)]="marketplace.type"
+                                name="type">
+                                <option>Electronic</option>
+                                <option>Kitchen</option>
+                                <option>Bedroom/Common Area</option>
+                                <option>Other</option>
+                            </select> </div>
+                    </div>
+                    <div class="row justify-content-between text-left">
+                        <div class="form-group col-sm-6 flex-column d-flex">
+                            <label class="form-control-label px-3">Description<span
+                                    class="text-danger"> *</span></label> <input
+                                type="text"
+                                class="form-control"
+                                id="description"
+                                required
+                                [(ngModel)]="marketplace.description"
+                                name="description"
+                                /> </div>
+                        <div class="form-group col-sm-6 flex-column d-flex">
+                            <label class="form-control-label px-3">Price<span
+                                    class="text-danger"> *</span></label> <input
+                                type="text"
+                                class="form-control"
+                                id="price"
+                                required
+                                [(ngModel)]="marketplace.price"
+                                name="price"
+                                /> </div>
+                    </div>
+                    <div class="row justify-content-between text-left">
+                        <div class="form-group col-sm-6 flex-column d-flex">
+                            <label class="form-control-label px-3">Contact<span
+                                    class="text-danger"> *</span></label> <input
+                                class="form-control"
+                                id="contact"
+                                required
+                                [(ngModel)]="marketplace.contact"
+                                name="contact"
+                                /></div>
+                        <div class="form-group col-sm-6 flex-column d-flex">
+                            <label class="form-control-label px-3">Negocitable<span
+                                    class="text-danger"> *</span></label>
+                            <select
+                                class="form-control"
+                                id="negotiable"
+                                required
+                                [(ngModel)]="marketplace.negotiable"
+                                name="negotiable">
+                                <option>Set Price</option>
+                                <option>Negotiable</option>
+                            </select> </div>
+                    </div>
+                    <div class="row justify-content-between text-left">
+                        <div class="form-group col-sm-6 flex-column d-flex">
+                            <label class="form-control-label px-3">University<span
+                                    class="text-danger"> *</span></label> <input
+                                class="form-control"
+                                id="university"
+                                required
+                                [(ngModel)]="marketplace.university"
+                                name="university"
+                                /> </div>
+                        <div class="form-group col-sm-6 flex-column d-flex">
+                            <label class="form-control-label px-3">Image<span
+                                    class="text-danger"> *</span></label> <input
+                                type="file" (change)="upload($event)" /> </div>
+                    </div>
+                    <div class="row justify-content-end">
+                        <div class="form-group"> <button (click)="saveItem()"
+                                class="btn btn-success">Submit</button> </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

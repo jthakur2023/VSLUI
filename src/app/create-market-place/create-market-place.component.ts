@@ -22,9 +22,10 @@ export class CreateMarketPlaceComponent {
     title: '',
     description: '',
     price: '',
-    condition: '',
+    negotiable: '',
     university:'',
     contact:'',
+    type:'',
   };
   submitted = false;
 
@@ -45,9 +46,10 @@ export class CreateMarketPlaceComponent {
       title:this.marketplace.title,
       description: this.marketplace.description,
       price: this.marketplace.price,
-      condition: this.marketplace.condition,
+      negotiable: this.marketplace.negotiable,
       university: this.marketplace.university,
       contact: this.marketplace.contact,
+      type: this.marketplace.type,
       userid: this.currentUser.id,
     };
     
@@ -70,9 +72,10 @@ export class CreateMarketPlaceComponent {
       title: '',
       description: '',
       price: '',
-      condition: '',
+      negotiable: '',
       university:'',
-      contact:''
+      contact:'',
+      type:'',
     };
   }
 

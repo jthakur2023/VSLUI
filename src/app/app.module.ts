@@ -28,6 +28,10 @@ import { UpdateComponent } from './update/update.component';
 import { MarketplaceComponent } from './marketplace/marketplace.component';
 import { CreateMarketPlaceComponent } from './create-market-place/create-market-place.component';
 import { ListingItemCreateComponent } from './listing-item-create/listing-item-create.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import {MatTooltipModule} from '@angular/material/tooltip';
+import { ReactiveFormsModule } from '@angular/forms';
+
 
 @NgModule({
   declarations: [
@@ -43,13 +47,16 @@ import { ListingItemCreateComponent } from './listing-item-create/listing-item-c
     UpdateComponent,
     MarketplaceComponent,
     CreateMarketPlaceComponent,
-    ListingItemCreateComponent
+    ListingItemCreateComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    BrowserAnimationsModule,
+    MatTooltipModule,
+    ReactiveFormsModule
   ],
   providers: [httpInterceptorProviders],
   bootstrap: [AppComponent]

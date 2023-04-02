@@ -9,12 +9,18 @@
                 <div class="form-group">
                     <label for="university">University</label>
                     <input
+                    type="text"
                     class="form-control"
+                    (input)="suggest()"
+                    [formControl]="typeahead"
                     id="university"
                     required
                     [(ngModel)]="listing.university"
                     name="university"
                     />
+                    <div class="suggestions" *ngIf="suggestions.length">
+                        <p *ngFor="let s of suggestions">{{s}}</p>
+                    </div>
                 </div>
                 <div class="form-group">
                     <label for="semester">Semester</label>
@@ -37,8 +43,8 @@
                     name="address"
                     />
                 </div>
-                <div class="form-group">
-                    <label for="address">City</label>
+                <!-- <div class="form-group">
+                    <label for="address">Gym</label>
                     <input
                     type="text"
                     class="form-control"
@@ -69,9 +75,9 @@
                     [(ngModel)]="listing.zip"
                     name="address"
                     />
-                </div>
+                </div> -->
 
-                <div class="form-group">
+               <!--  <div class="form-group">
                     <label for="address">Rooms</label>
                     <input
                     type="text"
@@ -81,9 +87,9 @@
                     [(ngModel)]="listing.rooms"
                     name="address"
                     />
-                </div>
+                </div> -->
 
-                <div class="form-group">
+               <!--  <div class="form-group">
                     <label for="address">Baths</label>
                     <input
                     type="text"
@@ -93,7 +99,7 @@
                     [(ngModel)]="listing.baths"
                     name="address"
                     />
-                </div>
+                </div> -->
 
             <div class="form-group">
                 <label for="rent">Rent</label>
@@ -136,5 +142,3 @@
         </div>
     </div>
 </div>    
-
-  

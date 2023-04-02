@@ -4,8 +4,9 @@ export class MarketPlace {
     title?: any;
     description?: any;
     price?: any;
-    condition?: any;
+    negotiable?: any;
     userId?:any;
     university?:any;
     contact?:any;
+    type?:any;
   }

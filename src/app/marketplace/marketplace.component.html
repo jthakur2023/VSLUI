@@ -39,20 +39,21 @@
     <section id="gallery">
         <div class="container">
           <div class="row">
-          <div class="col-lg-4 mb-4" *ngFor="let listing of marketplaces; let i = index">
+          <div class="col-lg-4 mb-4" *ngFor="let item of marketplaces; let i = index">
           <div class="card">
-            <img src="http://localhost:8080/images/{{listing.image}}" alt="" class="card-img-top" height="200">
+            <img src="http://localhost:8080/images/{{item.image}}" alt="" class="card-img-top" height="200">
             <div class="card-body">
-              <h5 class="card-title">{{listing.title}}</h5>
-              <p class="card-text">{{listing.university}}</p>
-              <p class="card-text">{{listing.description}}</p>
-              <p class="card-text">{{listing.condition}}</p>
-              <span class="badge">Price:{{listing.price}}</span>
-              <p class="card-text">{{listing.contact}}</p>
+              <h5 class="card-title">{{item.title}}</h5>
+              <p class="card-text">{{item.university}}</p>
+              <p class="card-text">{{item.description}}</p>
+              <p class="card-text">{{item.negotiable}}</p>
+              <span class="badge">Price:{{item.price}}</span>
+              <p class="card-text">{{item.contact}}</p>
+              <p class="card-text">{{item.type}}</p>
             </div>
-            <div *ngIf="listing.userId == currentUser.id">
+            <div *ngIf="item.userId == currentUser.id">
               <br/><br/>
-              <button class="btn btn-link" (click)='removeMarketplace(listing)'><span class="material-symbols-outlined">
+              <button class="btn btn-link" (click)='removeMarketplace(item)'><span class="material-symbols-outlined">
                 delete
                 </span></button>
           </div>

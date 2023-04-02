@@ -28,6 +28,8 @@ export class ListingDetailComponent {
     image: '',
   };
   currentUser: any;
+  listings?: Listing[];
+  university = this.currentListing.university;
   
 
   message = '';
@@ -145,6 +147,18 @@ export class ListingDetailComponent {
 
   
   }
+   searchUniversity(): void {
+    this.currentListing = {};
+
+    this.listingService.findByUniversity(this.currentListing.university)
+      .subscribe({
+        next: (data) => {
+          this.listings = data;
+          console.log(data);
+        },
+        error: (e) => console.error(e)
+      });
+  } 
 
 
 
