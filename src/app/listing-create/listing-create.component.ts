@@ -4,6 +4,7 @@ import { ListingService } from '../_services/listing.service';
 import { StorageService } from '../_services/storage.service';
 import { HttpClient } from '@angular/common/http';
 import { FormControl } from '@angular/forms';
+
 @Component({
   selector: 'app-listing-create',
   templateUrl: './listing-create.component.html',
@@ -33,20 +34,35 @@ export class ListingCreateComponent {
     phoneNumber:'',
     email:'',
     personalNote:'',
-    wifi:''
+    wifi:'',
+    bedrooms:'',
+    bathrooms:'',
   };
   submitted = false;
-  uni: any;
-  uniNames: any [] = [];
   universityList: any [] =[];
   suggestions: string[] = [];
+  jsonDataResult: any []= [];
+
+
 
 
   constructor(private listingService: ListingService, private storageService: StorageService, private http: HttpClient) { }
 
   ngOnInit(): void {
     this.currentUser = this.storageService.getUser();
+   /*  this.populateList(); */
   }
+
+  /* populateList(){
+    this.http.get('../assets/us_universities.json', {responseType : 'text'})
+    .subscribe( resp => {
+      this.jsonDataResult = JSON.parse(resp);
+      this.universityList.push(this.jsonDataResult);
+      console.log(this.universityList);
+    })
+  }
+ */
+  
 
   suggest(){
     this.suggestions = this.universityList
@@ -70,6 +86,8 @@ export class ListingCreateComponent {
       email: this.listing.email,
       personalNote: this.listing.personalNote,
       wifi: this.listing.wifi,
+      bedrooms:this.listing.bedrooms,
+      bathrooms:this.listing.bathrooms,
   
       userid: this.currentUser.id,
       image: this.listing.image,

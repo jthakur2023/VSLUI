@@ -1,9 +1,9 @@
 h1{
-   font-family: 'Raleway', sans-serif;
+  font-family: 'Mukta', sans-serif;
     color: #49A078;
 }
 h3{
-    font-family: 'Roboto Mono', monospace;
+  font-family: 'Mukta', sans-serif;
     font-style: oblique;
     color: #CACAAA;
 }
@@ -47,6 +47,7 @@ h3{
     border: none;
     box-shadow: 5px 6px 6px 2px #e9ecef;
     border-radius: 4px;
+    background-color: #F8F8FF;
 
 }
 
@@ -54,36 +55,86 @@ h3{
     width: 100%
   }
 
-  .collapsible-link::before {
-    content: '';
-    width: 14px;
-    height: 2px;
-    background: #333;
-    position: absolute;
-    top: calc(50% - 1px);
-    right: 1rem;
-    display: block;
-    transition: all 0.3s;
+  
+  .accordion{
+    margin: 40px 0;
+    
+  }
+  .accordion .item {
+      border: none;
+      margin-bottom: 50px;
+      background: none;
+      box-shadow: 5px 6px 6px 2px #e9ecef;
+      border-radius: 4px;
+      background-color: #F8F8FF;
+      
+  }
+  .t-p{
+    padding: 40px 30px 0px 30px;
+  }
+  .accordion .item .item-header h2 button.btn.btn-link {
+      color: black;
+      border-radius: 0px;
+      font-family: 'Mukta', sans-serif;
+     
+      font-weight: 400;
+      line-height: 2.5;
+      text-decoration: none;
+  }
+  .accordion .item .item-header {
+      border-bottom: none;
+      background: transparent;
+      padding: 0px;
+      margin: 2px;
+  }
+
+  .card-title{
+    font-family: 'Mukta', sans-serif;
+  }
+
+  .card-description{
+    font-family: 'Mukta', sans-serif;
   }
   
-  /* Vertical line */
-  .collapsible-link::after {
-    content: '';
-    width: 2px;
-    height: 14px;
-    background: #333;
-    position: absolute;
-    top: calc(50% - 7px);
-    right: calc(1rem + 6px);
-    display: block;
-    transition: all 0.3s;
+  .accordion .item .item-header h2 button {
+      color: black;
+      font-size: 20px;
+      padding: 15px;
+      display: block;
+      width: 100%;
+      text-align: left;
   }
   
-  .collapsible-link[aria-expanded='true']::after {
-    transform: rotate(90deg) translateX(-1px);
+  .accordion .item .item-header h2 i {
+      float: right;
+      font-size: 30px;
+      color: #eca300;
+      width: 60px;
+      height: 40px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border-radius: 5px;
   }
   
-  .collapsible-link[aria-expanded='true']::before {
-    transform: rotate(180deg);
+  button.btn.btn-link.collapsed i {
+      transform: rotate(0deg);
   }
+  
+  button.btn.btn-link i {
+      transform: rotate(180deg);
+      transition: 0.5s;
+  }
+
+.material-symbols-outlined {
+  font-variation-settings:
+  'FILL' 0,
+  'wght' 400,
+  'GRAD' 0,
+  'opsz' 48
+}
+.title{
+  font-weight: bold;
+}
+
   

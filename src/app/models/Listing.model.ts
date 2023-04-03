@@ -22,4 +22,6 @@ export class Listing {
   email?: any;
   personalNote?: any;
   wifi?:any;
+  bedrooms?:any;
+  bathrooms?:any;
 }

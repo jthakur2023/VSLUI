@@ -36,7 +36,7 @@ export class LoginComponent implements OnInit {
         this.isLoginFailed = false;
         this.isLoggedIn = true;
         //this.reloadPage();
-        window.location.replace('/listings');
+        window.location.replace('listings/user');
       },
       error: err => {
         this.errorMessage = err.error.message;

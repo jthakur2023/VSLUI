@@ -4,24 +4,20 @@
     <a href="#" class="navbar-brand">VSL</a>
     <ul class="navbar-nav mr-auto" routerLinkActive="active">
       <li class="nav-item">
-        <a href="/listings" class="nav-link" *ngIf="isLoggedIn" routerLink="listings">AllListings</a>
-      </li>
-      <li class="nav-item">
         <a href="/listings/user" class="nav-link" *ngIf="isLoggedIn" routerLink="listings/user">Dashboard</a>
       </li>
       <li class="nav-item">
-        <a href="/listings/favorites" class="nav-link" *ngIf="isLoggedIn" routerLink="listings/favorites"><span class="material-symbols-outlined">
-          favorite
-          </span></a>
+        <a href="/listings" class="nav-link" *ngIf="isLoggedIn" routerLink="listings">All Listings</a>
       </li>
       <li class="nav-item">
-        <a href="/create" class="nav-link" *ngIf="isLoggedIn" routerLink="create"><span class="material-symbols-outlined">
-          add
-          </span></a>
+        <a href="/create" class="nav-link" *ngIf="isLoggedIn" routerLink="create">Create New Listing</a>
       </li>
       <li class="nav-item">
         <a href="/marketplace" class="nav-link" *ngIf="isLoggedIn" routerLink="marketplace">
           Marketplace</a>
+      </li>
+      <li class="nav-item">
+        <a href="/listings/favorites" class="nav-link" *ngIf="isLoggedIn" routerLink="listings/favorites">Favorites</a>
       </li>
     </ul>
 

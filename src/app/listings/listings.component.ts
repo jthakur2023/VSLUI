@@ -4,6 +4,8 @@ import { ListingService } from '../_services/listing.service';
 import { StorageService } from '../_services/storage.service';
 import { Listing } from '../models/Listing.model';
 
+
+
 @Component({
   selector: 'app-listings',
   templateUrl: './listings.component.html',
@@ -12,10 +14,11 @@ import { Listing } from '../models/Listing.model';
 export class ListingsComponent {
 
   constructor(private listingService: ListingService, private storageService: StorageService,
-    private route: ActivatedRoute,
-    private router: Router) { }
+    public route: ActivatedRoute,
+    public router: Router) { }
   
   listings?: Listing[];
+  
   currentListing: Listing = {};
   currentIndex = -1;
   university = '';

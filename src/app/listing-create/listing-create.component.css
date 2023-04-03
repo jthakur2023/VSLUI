@@ -72,3 +72,6 @@ body{color: #000;overflow-x: hidden;height: 100%;background-image: url("https://
   #no:checked ~ .switch label[for=no] {
     color: #fff;
   }
+  .uniLabel{
+    font-size: xx-small;
+  }

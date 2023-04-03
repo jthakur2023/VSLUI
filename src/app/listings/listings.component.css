@@ -33,6 +33,22 @@ body{background: #f9f9f9;font-size: 16px;font-family: 'Raleway', sans-serif}.con
   'GRAD' 0,
   'opsz' 40
 }
+.filters{
+    text-align: center;
+    padding: 70px 0;
+    float: right;
+    position: absolute;
+  top: 50%;
+  left: 50%;
+}
+.customRange2{
+    position: absolute;
+    text-align: center;
+}
+
+.views{
+    color: white;
+}
 
 
  
