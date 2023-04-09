@@ -22,6 +22,8 @@ export class ListingsComponent {
   currentListing: Listing = {};
   currentIndex = -1;
   university = '';
+  semester = '';
+  type = '';
   currentUser: any;
   href: string = "";
   isFavorite = false;
@@ -86,8 +88,80 @@ export class ListingsComponent {
   searchUniversity(): void {
     this.currentListing = {};
     this.currentIndex = -1;
+    this.findByFiler();
 
-    this.listingService.findByUniversity(this.university)
+    // this.listingService.findByUniversity(this.university)
+    //   .subscribe({
+    //     next: (data) => {
+    //       this.listings = data;
+    //       console.log(data);
+    //     },
+    //     error: (e) => console.error(e)
+    //   });
+  }
+
+ 
+  findByFiler(): void {
+    this.currentListing = {};
+    this.currentIndex = -1;
+    var qp = ''; 
+    if (this.university.length>1) {
+       qp += "university="+this.university +"&";
+    }
+    if (this.semester.length>1) {
+      qp += "semester="+this.semester+"&";
+    } 
+    if (this.type.length>1) {
+      qp += "type="+this.type+"&";
+    }
+    if (qp.endsWith("&")) {
+      qp=qp.substring(0,qp.length-1);
+    }
+
+    this.listingService.findByFilter(qp)
+      .subscribe({
+        next: (data) => {
+          this.listings = data;
+          console.log(data);
+        },
+        error: (e) => console.error(e)
+      });
+  }
+
+ 
+  getSemesterValue(value : string) : void{
+    this.semester = value;
+    //this.searchSemester();
+    this.findByFiler()
+  }
+
+  searchSemester(): void {
+    this.currentListing = {};
+    this.currentIndex = -1;
+    
+
+    this.listingService.findBySemester(this.semester)
+      .subscribe({
+        next: (data) => {
+          this.listings = data;
+          console.log(data);
+        },
+        error: (e) => console.error(e)
+      });
+  }
+
+  getTypeValue(value : string) : void{
+    this.type = value;
+    //this.searchType();
+    this.findByFiler();
+  }
+
+  searchType(): void {
+    this.currentListing = {};
+    this.currentIndex = -1;
+    
+
+    this.listingService.findByType(this.type)
       .subscribe({
         next: (data) => {
           this.listings = data;

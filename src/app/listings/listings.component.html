@@ -39,10 +39,10 @@
               Housing Type
             </button>
             <ul class="dropdown-menu" aria-labelledby="typeDrop">
-              <li><button class="dropdown-item" type="button">Apartment</button></li>
-              <li><button class="dropdown-item" type="button">Condo</button></li>
-              <li><button class="dropdown-item" type="button">Townhouse</button></li>
-              <li><button class="dropdown-item" type="button">Single Family
+              <li><button class="dropdown-item" type="button" (click)="getTypeValue('Apartment')">Apartment</button></li>
+              <li><button class="dropdown-item" type="button" (click)="getTypeValue('Condo')">Condo</button></li>
+              <li><button class="dropdown-item" type="button" (click)="getTypeValue('Townhouse')">Townhouse</button></li>
+              <li><button class="dropdown-item" type="button" (click)="getTypeValue('Single Family House')">Single Family
                   House</button></li>
             </ul>
           </div>
@@ -53,11 +53,11 @@
               Semester
             </button>
             <ul class="dropdown-menu" aria-labelledby="semesterDrop">
-              <li><button class="dropdown-item" type="button">Fall</button></li>
-              <li><button class="dropdown-item" type="button">Spring</button></li>
-              <li><button class="dropdown-item" type="button">Summer</button></li>
+              <li><button class="dropdown-item" type="button" (click)="getSemesterValue('Fall')">Fall</button></li>
+              <li><button class="dropdown-item" type="button" (click)="getSemesterValue('Spring')">Spring</button></li>
+              <li><button class="dropdown-item" type="button" (click)="getSemesterValue('Summer')">Summer</button></li>
             </ul>
-          </div>
+          </div> 
           <div class="dropdown">
             <button class="btn btn-secondary dropdown-toggle" type="button"
               id="semesterDrop" data-toggle="dropdown"

@@ -133,9 +133,20 @@
                     <p>Housing Type: {{currentListing.type}}</p>
                     <p>Sublease: {{currentListing.sublease}}</p>
                     <p>Available: {{ currentListing.semester }}</p>
+                    <div class="row">
+                      <div class="col-sm">
+                        <p>Bedrooms: {{currentListing.bedrooms}}</p>
+                      </div>
+                      <div class="col-sm">
+                        <p>Bathrooms: {{currentListing.bathrooms}}</p>
+                      </div>
+                    </div>
+                    <p>Contact:</p>
+                    <p>Phone Number: {{currentListing.phoneNumber}}</p>
+                    <p>Email: {{currentListing.email}}</p>
                     <h3 class="my-3">Amenenties</h3>
-                    <div *ngIf="currentListing.laundry == 'Yes'">
-                      <span class="material-symbols-outlined">
+                    <div *ngIf="currentListing.laundry == 'Yes'" >
+                      <span class="material-symbols-outlined" (mouseover)="'Laundry'">
                         local_laundry_service
                       </span>
                     </div>
