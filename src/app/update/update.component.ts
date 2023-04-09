@@ -50,6 +50,7 @@ export class UpdateComponent {
         next: (res) => {
           console.log(res);
           this.message = res.message ? res.message : 'This Listing was updated successfully!';
+          this.router.navigate(['/details', this.currentListing.id]);
         },
         error: (e) => console.error(e)
       });

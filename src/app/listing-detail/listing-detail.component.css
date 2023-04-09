@@ -4,8 +4,12 @@ h1{
 }
 h3{
   font-family: 'Mukta', sans-serif;
-    font-style: oblique;
-    color: #CACAAA;
+    font-style:italic;
+    color: #49A078;
+}
+h4{
+  font-family: 'Mukta', sans-serif;
+    color: #49A078;
 }
 #slider .carousel-item {
     height: 500px;
@@ -136,5 +140,10 @@ h3{
 .title{
   font-weight: bold;
 }
-
+.img{
+  float: left;
+  width:  100px;
+  height: 100px;
+  object-fit: cover;
+}
   

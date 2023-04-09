@@ -13,7 +13,11 @@
     width: 50%;
 }
 #filterNavbar{
-    width: auto;
+    margin: auto;
+    padding: 1px;
+    width: 68%;
+    text-align: center;
+    padding-bottom: 1%;
 }
 #info{
     position: absolute;

@@ -3,8 +3,12 @@
 <link
   href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@1&family=Josefin+Sans:ital,wght@1,300&family=Mukta:wght@300&family=Quicksand&family=Raleway:wght@200&display=swap"
   rel="stylesheet">
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
+<link rel="stylesheet"
+  href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
+  />
+<link rel="stylesheet"
+  href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0"
+  />
 <section>
   <div class="container">
     <!-- Portfolio Item Heading -->
@@ -126,61 +130,66 @@
                       </svg> {{ currentListing.university}}
                     </p>
                     <p>Rent: ${{ currentListing.rent }}</p>
-                    <p>Type: {{currentListing.type}}</p>
-                    <p>Sublease: </p>
+                    <p>Housing Type: {{currentListing.type}}</p>
+                    <p>Sublease: {{currentListing.sublease}}</p>
                     <p>Available: {{ currentListing.semester }}</p>
                     <h3 class="my-3">Amenenties</h3>
-                      <div *ngIf="currentListing.laundry == 'Yes'">
-                        <li><span class="material-symbols-outlined">
-                          local_laundry_service
-                          </span></li>
-                      </div>
-                      <div *ngIf="currentListing.wifi == 'Yes'">
-                        <span class="material-symbols-outlined">
-                          network_manage
-                          </span>
-                      </div>
-                      <div *ngIf="currentListing.pool == 'Yes'">
-                        <span class="material-symbols-outlined">
-                          pool
-                          </span>
-                      </div>
-                      <div *ngIf="currentListing.gym == 'Yes'">
-                        <span class="material-symbols-outlined">
-                          fitness_center
-                          </span>
-                      </div>
-                      <div *ngIf="currentListing.parking == 'Yes'">
-                        <span class="material-symbols-outlined">
-                          local_parking
-                          </span>
-                      </div>
+                    <div *ngIf="currentListing.laundry == 'Yes'">
+                      <span class="material-symbols-outlined">
+                        local_laundry_service
+                      </span>
+                    </div>
+                    <div *ngIf="currentListing.wifi == 'Yes'">
+                      <span class="material-symbols-outlined">
+                        network_manage
+                      </span>
+                    </div>
+                    <div *ngIf="currentListing.pool == 'Yes'">
+                      <span class="material-symbols-outlined">
+                        pool
+                      </span>
+                    </div>
+                    <div *ngIf="currentListing.gym == 'Yes'">
+                      <span class="material-symbols-outlined">
+                        fitness_center
+                      </span>
+                    </div>
+                    <div *ngIf="currentListing.parking == 'Yes'">
+                      <span class="material-symbols-outlined">
+                        local_parking
+                      </span>
+                    </div>
                   </div>
                 </div>
                 <div *ngIf="currentListing.userid == currentUser.id"
                   id="personalButtons">
                   <button class="btn btn-success" (click)="this.addItem()">
                     <svg xmlns="http://www.w3.org/2000/svg" width="16"
-                      height="16" fill="currentColor" class="bi bi-plus-circle"
+                      height="16" fill="currentColor" class="bi
+                      bi-plus-circle"
                       viewBox="0 0
                       16 16">
-                      <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0
+                      <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1
+                        0
                         8 0a8 8 0 0 0 0 16z" />
                         <path d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0
-                          1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0
+                          1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5
+                          0
                           0 1 8 4z" />
                         </svg>
                       </button>
                     </div>
                     <div class="container">
-                      <div class="accordion" id="accordionExample" *ngIf="items
+                      <div class="accordion" id="accordionExample"
+                        *ngIf="items
                         != undefined && items.length> 0">
                         <div class="item">
                           <div class="item-header" id="headingOne">
                             <h2 class="mb-0">
                               <button class="btn btn-link" type="button"
                                 data-toggle="collapse"
-                                data-target="#collapseOne" aria-expanded="true"
+                                data-target="#collapseOne"
+                                aria-expanded="false"
                                 aria-controls="collapseOne">
                                 Furniture Included:
                               </button>
@@ -190,78 +199,93 @@
                             aria-labelledby="headingOne"
                             data-parent="#accordionExample">
                             <div class="card-body p-5">
-                              <div class="col" *ngFor="let item of items; let i = index">
+                              <div class="col" *ngFor="let item of items; let
+                                i= index">
                                 <div class="card" style="width: 18rem">
-                                  <img src="http://localhost:8080/images/{{ item.image }}" alt="" class="card-img-top" />
-                                  <h5 class="card-title" id="title">{{ item.title }}</h5>
-                                  <h5 class="card-description">{{ item.description }}</h5>
+                                  <img src="http://localhost:8080/images/{{
+                                    item.image }}" alt="" class="card-img-top"
+                                    />
+                                  <h5 class="card-title" id="title">{{
+                                    item.title }}</h5>
+                                  <h5 class="card-description">{{
+                                    item.description }}</h5>
                                 </div>
                               </div>
                             </div>
-                          </div>
-                        </div>
-                        <br />
-                        <br />
-                        <div class="container">
-                          <h5 class="card-title" id="commentTitle">Comments</h5>
-                          <div class="col-lg-12 mb-12" *ngFor="let comment of
-                            comments; let i= index">
-                            <div class="card p-3" id="card">
-                              <div class="d-flex justify-content-between
-                                align-items-center">
-                                <div class="user d-flex flex-row
-                                  align-items-center">
-                                  <img
-                                    src="//ssl.gstatic.com/accounts/ui/avatar_2x.png"
-                                    width="30" class="user-img rounded-circle
-                                    mr-2" />
-                                  <span><small class="font-weight-bold
-                                      text-warning">{{
-                                      currentUser.username
-                                      }} </small> 
-                                    <small class="font">{{
-                                      comment.comment }}</small></span>
-                                </div>
-                                <small>{{ comment.createdAt.substring(0, 10) }}</small>
-                              </div>
-                            </div>
-                          </div>
-                          <br>
-                        </div>
-                        <app-comments [currentListing]="currentListing"></app-comments> 
-                        <h3 class="my-4">Other Listings in {{currentListing.university}}</h3>
-                        <div class="row">
-                          <div class="col-md-3 col-sm-6 mb-4">
-                            <a href="#">
-                              <img class="img-fluid"
-                                src="https://via.placeholder.com/500x300" alt=""
-                                />
-                            </a>
-                          </div>
-
-                          <div class="col-md-3 col-sm-6 mb-4">
-                            <a href="#">
-                              <img class="img-fluid"
-                                src="https://via.placeholder.com/500x300" alt=""
-                                />
-                            </a>
-                          </div>
-
-                          <div class="col-md-3 col-sm-6 mb-4">
-                            <a href="#">
-                              <img class="img-fluid"
-                                src="https://via.placeholder.com/500x300" alt=""
-                                />
-                            </a>
-                          </div>
-
-                          <div class="col-md-3 col-sm-6 mb-4">
-                            <a href="#">
-                              <img class="img-fluid"
-                                src="https://via.placeholder.com/500x300" alt=""
-                                />
-                            </a>
                           </div>
                         </div>
                       </div>
-                      
+                    </div>
+                  </div>
+                  <div>
+                    <h4>Note</h4>
+                    <p>{{currentListing.personalNote}}</p>
+
+                  </div>
+                  <br />
+                  <br />
+                  <div class="container">
+                    <h5 class="card-title" id="commentTitle">Comments</h5>
+                    <div class="col-lg-12 mb-12" *ngFor="let comment of
+                      comments; let i= index">
+
+                      <div class="card p-3" id="card">
+                        <div class="d-flex justify-content-between
+                          align-items-center">
+                          <div class="user d-flex flex-row
+                            align-items-center">
+                            <img
+                              src="//ssl.gstatic.com/accounts/ui/avatar_2x.png"
+                              width="30" class="user-img rounded-circle
+                              mr-2" />
+                            <span><small class="font-weight-bold
+                                text-warning">{{
+                                currentUser.username
+                                }} </small>
+                              <small class="font">{{
+                                comment.comment }}</small></span>
+                          </div>
+                          <small>{{ comment.createdAt.substring(0, 10) }}</small>
+                        </div>
+                      </div>
+                    </div>
+                    <br>
+                  </div>
+                  <app-comments [currentListing]="currentListing"></app-comments>
+                  <h3 class="my-4" *ngIf="currentListing.userid !=
+                    currentUser.id">Other Listings in
+                    {{currentListing.university}}</h3>
+                  <!-- <div class="row" *ngIf="currentListing.userid ==
+                    currentUser.id">
+                    <div class="col-md-3 col-sm-6 mb-4">
+                      <a href="#">
+                        <img class="img-fluid"
+                          src="https://via.placeholder.com/500x300" alt=""
+                          />
+                      </a>
+                    </div>
+
+                    <div class="col-md-3 col-sm-6 mb-4">
+                      <a href="#">
+                        <img class="img"
+                          src="../assets/Screen Shot 2023-04-03 at 2.02.01 PM.png" height="200"alt=""
+                          />
+                      </a>
+                    </div>
+
+                    <div class="col-md-3 col-sm-6 mb-4">
+                      <a href="#">
+                        <img class="img"
+                          src="../assets/Screen Shot 2023-04-03 at 2.02.18 PM.png" height="200"alt=""
+                          />
+                      </a>
+                    </div> 
+
+                    <div class="col-md-3 col-sm-6 mb-4">
+                      <a href="#">
+                        <img class="img"
+                          src="../assets/Screen Shot 2023-04-03 at 2.01.48 PM.png" alt=""
+                          />
+                      </a>
+                    </div>
+                  </div> -->

@@ -64,11 +64,11 @@ export class ListingCreateComponent {
  */
   
 
-  suggest(){
+  /* suggest(){
     this.suggestions = this.universityList
     .filter(c => c.startsWith(this.typeahead.value))
     .slice(0, 5);
-  }
+  } */
 
   saveListing(): void {
     const data = {
