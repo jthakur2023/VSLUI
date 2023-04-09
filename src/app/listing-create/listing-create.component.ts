@@ -15,6 +15,8 @@ export class ListingCreateComponent {
   currentUser: any;
   typeahead: FormControl = new FormControl();
 
+  inputAddress ='';
+
   data = new FormData();
 
   listing: Listing = {
@@ -50,6 +52,8 @@ export class ListingCreateComponent {
 
   ngOnInit(): void {
     this.currentUser = this.storageService.getUser();
+    //this.validateAddress();
+
    /*  this.populateList(); */
   }
 
@@ -95,7 +99,7 @@ export class ListingCreateComponent {
       image3: this.listing.image3,
     };
     
-
+    debugger;
     this.listingService.create(data)
       .subscribe({
         next: (res) => {
@@ -152,5 +156,28 @@ export class ListingCreateComponent {
         error: (e) => console.error(e)
       });
   }
+
+  validateAddress(event:any) {
+    const postalAdress = {
+      "revision": 0,
+      "addressLines": [
+        event.target.value
+      ],
+    }
+    
+    const data = {
+        "address": postalAdress,
+        "previousResponseId": "",
+        "enableUspsCass": false
+    }
+    this.listingService.addressValidatorService(data)
+    .subscribe({
+      next: (res) => {
+        this.listing.address = res.result.address.formattedAddress;
+      },
+      error: (e) => console.error(e)
+    });
+
+  } 
 
 }

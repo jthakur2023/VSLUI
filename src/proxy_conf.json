@@ -1,0 +1,7 @@
+{
+    "/v1:validateAddress/*": {
+        "target": "https://addressvalidation.googleapis.com",
+        "secure": false,
+        "logLevel": "debug"
+    }
+}

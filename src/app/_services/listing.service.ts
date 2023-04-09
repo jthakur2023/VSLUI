@@ -7,6 +7,8 @@ import { Item } from '../models/Item.model';
 const baseUrl = 'http://localhost:8080/api/listings';
 const favoritesUrl = 'http://localhost:8080/api/favorites';
 const listingItemsUrl = 'http://localhost:8080/api/listing/items';
+const locationUrl = 'https://addressvalidation.googleapis.com/v1:validateAddress?key=AIzaSyBJlAx_BO47aYqqJB2tEe1BscKkVBCmDf8';
+
 
 @Injectable({
   providedIn: 'root'
@@ -79,4 +81,9 @@ export class ListingService {
   }
   
 
+  addressValidatorService(data: any):Observable<any> {
+    return this.http.post(locationUrl, data);
+  }
+
+  
 }
